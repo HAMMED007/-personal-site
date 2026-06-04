@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <script>
+    // Detect and apply dark mode immediately before render to avoid flash
+    if (localStorage.getItem('theme') === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+      document.documentElement.classList.add('dark');
+    } else {
+      document.documentElement.classList.remove('dark');
+    }
+  </script>
+
+  <!-- Primary SEO -->
+  <title id="meta-title">Blog - Hammed Afenifere</title>
+  <meta name="description" content="Read Hammed Afenifere's articles on cross-border payments, emerging market trade infrastructure, and compliant fintech expansion.">
+  <meta name="author" content="Hammed Afenifere">
+  <meta name="robots" content="index, follow">
+
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="split-page">
+
+  <nav>
+    <a href="index.html">home</a>
+    <a href="about.html">about</a>
+    <a href="articles.html" class="active">blog</a>
+    <a href="conferences.html">conferences</a>
+    <a href="gallery.html">gallery</a>
+    <a href="press.html">press &amp; media</a>
+    <a href="contact.html">contact</a>
+    <button id="theme-toggle" class="theme-toggle-btn" aria-label="Toggle theme">
+      <svg class="sun-icon" viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
+        <circle cx="12" cy="12" r="5"></circle>
+        <line x1="12" y1="1" x2="12" y2="3"></line>
+        <line x1="12" y1="21" x2="12" y2="23"></line>
+        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+        <line x1="1" y1="12" x2="3" y2="12"></line>
+        <line x1="21" y1="12" x2="23" y2="12"></line>
+        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+      </svg>
+      <svg class="moon-icon" viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+      </svg>
+    </button>
+  </nav>
+
+  <div class="split-layout">
+    <aside class="sidebar-info">
+      <!-- Headshot -->
+      <img
+        src="https://s3.amazonaws.com/cco-avatars/91acd1dc-1a3b-40e7-b0a4-964e12e3f699.png"
+        alt="Hammed Afenifere"
+        class="headshot"
+      >
+      <h1>Hammed Afenifere</h1>
+      <p class="sidebar-bio">CEO &amp; Co-Founder, <a href="https://www.sparktechs.ca" target="_blank" rel="noopener">Spark Tech Hub</a> — a licensed Canadian fintech company behind <a href="https://www.oneremit.co" target="_blank" rel="noopener">Oneremit</a> and <a href="https://www.payremit.io" target="_blank" rel="noopener">Payremit</a>. Building compliant payment infrastructure that unlocks trade between emerging markets and the rest of the world.</p>
+      
+      <!-- Stats sit right below bio inside the sidebar -->
+      <div class="stat-row">
+        <div class="stat">
+          <span class="stat-number" data-target="100" data-suffix="M+">$100M+</span>
+          <span class="stat-label">Processed in payments</span>
+        </div>
+        <div class="stat">
+          <span class="stat-number" data-target="4" data-suffix="">4</span>
+          <span class="stat-label">Regulatory licences</span>
+        </div>
+        <div class="stat">
+          <span class="stat-number" data-target="5" data-suffix="">5</span>
+          <span class="stat-label">Countries</span>
+        </div>
+      </div>
+    </aside>
+
+    <main class="main-content">
+      <div class="back-link">
+        <a href="articles.html">← Back to blog</a>
+      </div>
+
+      <article class="blog-post">
+        <div class="post-date" id="post-date">May 2026</div>
+        <h1 class="post-title" id="post-title">Loading article...</h1>
+    
+    <div class="post-body">
+      <div class="coming-soon-card">
+        <h2>Coming Soon</h2>
+        <p>This article is currently in draft status and is being prepared for publication. It will cover Hammed Afenifere's insights on compliant cross-border payment infrastructure, emerging market trade finance, and building concierge-first payment scaling solutions.</p>
+        <p>Please check back shortly or connect on LinkedIn for updates when new articles are officially published.</p>
+      </div>
+    </div>
+
+    <div class="post-footer">
+      <div class="entry-actions">
+        <button class="like-button" id="post-like-btn" aria-label="Like post">
+          <svg class="heart-icon" viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
+          </svg>
+          <span class="like-count" id="post-like-count">0</span>
+        </button>
+      </div>
+    </div>
+  </article>
+
+    </main>
+  </div> <!-- end of split-layout -->
+
+  <hr>
+
+  <footer>
+    <span>&copy; 2026 Hammed Afenifere</span>
+    <div class="footer-links">
+      <a href="https://www.linkedin.com/in/hammed-adewumi-afenifere-2169a5116/" target="_blank" rel="noopener">LinkedIn</a>
+      <a href="https://www.oneremit.co" target="_blank" rel="noopener">Oneremit</a>
+      <a href="https://www.sparktechs.ca" target="_blank" rel="noopener">Spark Tech Hub</a>
+    </div>
+  </footer>
+
+  <script>
+    // URL parameter parsing
+    const urlParams = new URLSearchParams(window.location.search);
+    const postId = urlParams.get('id') || 'generic';
+    const postTitle = urlParams.get('title') || 'Article Coming Soon';
+    const postDate = urlParams.get('date') || '2026';
+
+    document.getElementById('post-title').textContent = postTitle;
+    document.getElementById('post-date').textContent = postDate;
+    document.getElementById('meta-title').textContent = `${postTitle} — Hammed Afenifere`;
+
+    // Theme toggle logic
+    function initTheme() {
+      const toggleBtn = document.getElementById('theme-toggle');
+      if (!toggleBtn) return;
+      toggleBtn.addEventListener('click', () => {
+        if (document.documentElement.classList.contains('dark')) {
+          document.documentElement.classList.remove('dark');
+          localStorage.setItem('theme', 'light');
+        } else {
+          document.documentElement.classList.add('dark');
+          localStorage.setItem('theme', 'dark');
+        }
+      });
+    }
+
+    // Dynamic Seed Likes generator (random but below 20)
+    function getSeedLikes(id) {
+      let seed = localStorage.getItem(`seed_likes_${id}`);
+      if (!seed) {
+        // Random number from 5 to 19 inclusive (strictly below 20)
+        seed = Math.floor(Math.random() * 15) + 5;
+        localStorage.setItem(`seed_likes_${id}`, seed);
+      }
+      return parseInt(seed, 10);
+    }
+
+    function initLikes() {
+      const btn = document.getElementById('post-like-btn');
+      if (!btn) return;
+      
+      const isLiked = localStorage.getItem(`liked_${postId}`) === 'true';
+      const countElement = document.getElementById('post-like-count');
+      
+      let baseCount = getSeedLikes(postId);
+      if (isLiked) {
+        btn.classList.add('liked');
+        countElement.textContent = baseCount + 1;
+      } else {
+        countElement.textContent = baseCount;
+      }
+      
+      btn.addEventListener('click', (e) => {
+        e.preventDefault();
+        e.stopPropagation();
+        toggleLike();
+      });
+    }
+
+    function toggleLike() {
+      const btn = document.getElementById('post-like-btn');
+      const countElement = document.getElementById('post-like-count');
+      if (!btn || !countElement) return;
+      
+      const isLiked = btn.classList.contains('liked');
+      let baseCount = getSeedLikes(postId);
+      
+      if (isLiked) {
+        btn.classList.remove('liked');
+        localStorage.setItem(`liked_${postId}`, 'false');
+        countElement.textContent = baseCount;
+      } else {
+        btn.classList.add('liked');
+        localStorage.setItem(`liked_${postId}`, 'true');
+        countElement.textContent = baseCount + 1;
+      }
+    }
+
+    // Stats counter animation
+    function animateStats() {
+      const stats = document.querySelectorAll('.stat-number[data-target]');
+      stats.forEach(stat => {
+        const target = parseInt(stat.getAttribute('data-target'), 10);
+        const suffix = stat.getAttribute('data-suffix') || '';
+        const prefix = stat.textContent.startsWith('$') ? '$' : '';
+        let current = 0;
+        const duration = 1500; // 1.5s
+        const increment = target > 50 ? Math.ceil(target / 50) : 1;
+        const intervalTime = Math.max(10, Math.floor(duration / (target / increment)));
+        
+        const timer = setInterval(() => {
+          current += increment;
+          if (current >= target) {
+            current = target;
+            clearInterval(timer);
+          }
+          stat.textContent = `${prefix}${current}${suffix}`;
+        }, intervalTime);
+      });
+    }
+
+    function initStatsAnimation() {
+      const statRow = document.querySelector('.stat-row');
+      if (!statRow) return;
+      
+      const observer = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            animateStats();
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.2 });
+      
+      observer.observe(statRow);
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+      initTheme();
+      initLikes();
+      initStatsAnimation();
+    });
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <script>
+    if (localStorage.getItem('theme') === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+      document.documentElement.classList.add('dark');
+    } else {
+      document.documentElement.classList.remove('dark');
+    }
+  </script>
+
+  <!-- Primary SEO -->
+  <title>Hammed Afenifere - Fintech Founder, Cross-Border Payments & Emerging Markets</title>
+  <meta name="description" content="Hammed Afenifere is CEO & Co-Founder of Spark Tech Hub, building compliant cross-border payment infrastructure for emerging markets through Oneremit and Payremit. Registered in 5 countries.">
+  <meta name="keywords" content="Hammed Afenifere, Oneremit, Payremit, Spark Tech Hub, fintech, cross-border payments, emerging markets, Africa, LATAM, payment infrastructure">
+  <meta name="author" content="Hammed Afenifere">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://hammedafenifere.com/">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Hammed Afenifere — Fintech Founder">
+  <meta property="og:description" content="CEO & Co-Founder of Spark Tech Hub. Building payment infrastructure for emerging markets through Oneremit and Payremit.">
+  <meta property="og:url" content="https://hammedafenifere.com/">
+  <meta property="og:site_name" content="Hammed Afenifere">
+  <meta property="og:image" content="https://hammedafenifere.com/og-image.jpg">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Hammed Afenifere — Fintech Founder">
+  <meta name="twitter:description" content="CEO & Co-Founder of Spark Tech Hub. Building payment infrastructure for emerging markets.">
+  <meta name="twitter:image" content="https://hammedafenifere.com/og-image.jpg">
+
+  <!-- JSON-LD Structured Data (no email exposed) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Hammed Afenifere",
+    "alternateName": "Afenifere Hammed Adewumi",
+    "url": "https://hammedafenifere.com",
+    "jobTitle": "CEO & Co-Founder",
+    "worksFor": [
+      {
+        "@type": "Organization",
+        "name": "Oneremit",
+        "url": "https://www.oneremit.co"
+      },
+      {
+        "@type": "Organization",
+        "name": "Spark Tech Hub",
+        "url": "https://www.sparktechs.ca"
+      }
+    ],
+    "description": "Fintech founder building compliant cross-border payment infrastructure for emerging markets across 5 countries.",
+    "knowsAbout": ["Cross-border payments", "Fintech", "Regulatory compliance", "Emerging markets", "Trade finance", "Payment infrastructure", "Oneremit", "Payremit"],
+    "sameAs": [
+      "https://www.linkedin.com/in/hammed-adewumi-afenifere-2169a5116/",
+      "https://www.oneremit.co",
+      "https://www.payremit.io",
+      "https://www.sparktechs.ca",
+      "https://councils.forbes.com/profile/Hammed-Afenifere-CEO-%7C-Co-Founder-Spark-Tech-Hub-Limited/c7e782ab-624e-449c-8b92-30f391980abb"
+    ]
+  }
+  </script>
+
+  <!-- FAQ Schema for GEO/SEO (AI & Google Discoverability) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What platforms has Hammed Afenifere built?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Hammed Afenifere is the CEO and Co-Founder of Spark Tech Hub, and has built two main cross-border payment products: Oneremit (focusing on compliant B2B cross-border payments for emerging market trade) and Payremit (focusing on diaspora payments)."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What regulatory licenses and registrations do Hammed's companies hold?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Spark Tech Hub's platforms are registered in five countries: the United States, Canada, Nigeria, Ghana, and the United Kingdom. They hold an MSB license in Canada, an IMTO license in Nigeria, are registered with FinCEN in the United States, and are approved as a PSP Agent by the Bank of Canada."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is Hammed Afenifere's vision for cross-border commerce?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Hammed's vision is that emerging markets represent untapped trade opportunities with the Western world. By building frictionless, compliant cross-border payment infrastructure, businesses can trade freely, creating a win-win scenario for global commerce."
+        }
+      }
+    ]
+  }
+  </script>
+
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="home-page split-page">
+
+  <nav>
+    <a href="index.html" class="active">home</a>
+    <a href="about.html">about</a>
+    <a href="articles.html">blog</a>
+    <a href="conferences.html">conferences</a>
+    <a href="gallery.html">gallery</a>
+    <a href="press.html">press &amp; media</a>
+    <a href="contact.html">contact</a>
+    <button id="theme-toggle" class="theme-toggle-btn" aria-label="Toggle theme">
+      <svg class="sun-icon" viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
+        <circle cx="12" cy="12" r="5"></circle>
+        <line x1="12" y1="1" x2="12" y2="3"></line>
+        <line x1="12" y1="21" x2="12" y2="23"></line>
+        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+        <line x1="1" y1="12" x2="3" y2="12"></line>
+        <line x1="21" y1="12" x2="23" y2="12"></line>
+        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+      </svg>
+      <svg class="moon-icon" viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+      </svg>
+    </button>
+  </nav>
+
+  <div class="split-layout">
+    <aside class="sidebar-info">
+      <!-- Headshot -->
+      <img
+        src="https://s3.amazonaws.com/cco-avatars/91acd1dc-1a3b-40e7-b0a4-964e12e3f699.png"
+        alt="Hammed Afenifere"
+        class="headshot"
+      >
+      <h1>Hammed Afenifere</h1>
+      <p class="sidebar-bio">CEO &amp; Co-Founder, <a href="https://www.sparktechs.ca" target="_blank" rel="noopener">Spark Tech Hub</a> — a licensed Canadian fintech company behind <a href="https://www.oneremit.co" target="_blank" rel="noopener">Oneremit</a> and <a href="https://www.payremit.io" target="_blank" rel="noopener">Payremit</a>. Building compliant payment infrastructure that unlocks trade between emerging markets and the rest of the world.</p>
+      
+      <!-- Stats sit right below bio inside the sidebar -->
+      <div class="stat-row">
+        <div class="stat">
+          <span class="stat-number" data-target="100" data-suffix="M+">$100M+</span>
+          <span class="stat-label">Processed in payments</span>
+        </div>
+        <div class="stat">
+          <span class="stat-number" data-target="4" data-suffix="">4</span>
+          <span class="stat-label">Regulatory licences</span>
+        </div>
+        <div class="stat">
+          <span class="stat-number" data-target="5" data-suffix="">5</span>
+          <span class="stat-label">Countries</span>
+        </div>
+      </div>
+    </aside>
+
+    <main class="main-content">
+      <!-- Blog — personal posts (drafts until published) -->
+      <h2>Blog</h2>
+
+      <div class="entry compact">
+        <div class="entry-date">May 2026</div>
+        <div class="entry-title">
+          <a href="post.html?id=payment-friction&title=The%20Real%20Cost%20of%20Payment%20Friction%20for%20Emerging%20Market%20Businesses&date=May%202026">The Real Cost of Payment Friction for Emerging Market Businesses</a>
+        </div>
+        <div class="entry-excerpt">What businesses in Nigeria, Ghana, and beyond lose every time a cross-border transfer fails or costs too much.</div>
+      </div>
+
+      <div class="entry compact">
+        <div class="entry-date">April 2026</div>
+        <div class="entry-title">
+          <a href="post.html?id=concierge-first&title=Why%20We%20Built%20Oneremit%20as%20a%20Concierge%20First&date=April%202026">Why We Built Oneremit as a Concierge First</a>
+        </div>
+        <div class="entry-excerpt">Starting manual is not weakness. It is how you learn what your customers actually need.</div>
+      </div>
+
+      <div class="entry compact">
+        <div class="entry-date">March 2026</div>
+        <div class="entry-title">
+          <a href="post.html?id=compliance-feature&title=Regulatory%20Compliance%20Is%20a%20Feature,%20Not%20a%20Bug&date=March%202026">Regulatory Compliance Is a Feature, Not a Bug</a>
+        </div>
+        <div class="entry-excerpt">FinCEN, MSB, FINTRAC - why licensing across three jurisdictions matters more than speed.</div>
+      </div>
+
+      <div class="entry compact">
+        <div class="entry-date">February 2026</div>
+        <div class="entry-title">
+          <a href="post.html?id=emerging-market-trade&title=Africa%20and%20the%20West%20Are%20Better%20Trade%20Partners%20Than%20the%20Payment%20System%20Allows&date=February%202026">Africa and the West Are Better Trade Partners Than the Payment System Allows</a>
+        </div>
+        <div class="entry-excerpt">The demand is real on both sides. What is missing is the infrastructure to close the deal.</div>
+      </div>
+
+      <div class="entry compact">
+        <div class="entry-date">January 2026</div>
+        <div class="entry-title">
+          <a href="post.html?id=lessons-100m&title=Building%20in%20Public:%20Lessons%20from%20Our%20First%20$100M&date=January%202026">Building in Public: Lessons from Our First $100M</a>
+        </div>
+        <div class="entry-excerpt">Transparency, trust, and the uncomfortable truths we learned processing $100M in cross-border payments.</div>
+      </div>
+
+      <a href="articles.html" class="see-all">All posts →</a>
+
+      <hr>
+
+      <!-- Published externally — compact one-liner -->
+      <h2>Featured In</h2>
+      <p class="featured-in">
+        <a href="https://councils.forbes.com/profile/Hammed-Afenifere-CEO-%7C-Co-Founder-Spark-Tech-Hub-Limited/c7e782ab-624e-449c-8b92-30f391980abb" target="_blank" rel="noopener">Forbes Business Council</a> ·
+        <a href="https://techeconomy.ng/digitizing-the-dollar-the-rise-of-modern-in-african-b2b-payments/" target="_blank" rel="noopener">Techeconomy</a> ·
+        <a href="https://bitcoinke.io/2025/09/oneremit-milestone-in-h1-2025/" target="_blank" rel="noopener">BitcoinKE</a> ·
+        <a href="https://www.ibtimes.co.uk/building-trust-across-borders-how-oneremit-giving-african-smes-fair-path-global-commerce-1756989" target="_blank" rel="noopener">IBTimes</a> and more.
+        <a href="press.html" class="see-all">See all coverage →</a>
+      </p>
+
+      <hr>
+
+      <!-- Quick Facts & FAQ Section (SEO/GEO Optimization) -->
+      <h2>Quick Facts &amp; FAQ</h2>
+      <div class="faq-container">
+        <div class="faq-item">
+          <div class="faq-question">What platforms have you built?</div>
+          <div class="faq-answer">I am the CEO and Co-Founder of <strong>Spark Tech Hub</strong>, and I have built two main cross-border payment products: <strong>Oneremit</strong> (focusing on compliant B2B cross-border payments for emerging market trade) and <strong>Payremit</strong> (focusing on diaspora payments).</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-question">What regulatory licenses and registrations do your companies hold?</div>
+          <div class="faq-answer">Our platforms at Spark Tech Hub are registered in five countries: the <strong>United States, Canada, Nigeria, Ghana, and the United Kingdom</strong>. We hold an MSB license in Canada, an IMTO license in Nigeria, are registered with FinCEN in the United States, and are approved as a PSP Agent by the Bank of Canada.</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-question">What is your vision for cross-border commerce?</div>
+          <div class="faq-answer">My vision is that emerging markets represent untapped trade opportunities with the Western world. By building frictionless, compliant cross-border payment infrastructure, we allow businesses to trade freely, creating a win-win scenario for global commerce.</div>
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <hr>
+
+  <footer>
+    <span>&copy; 2026 Hammed Afenifere</span>
+    <div class="footer-links">
+      <a href="https://www.linkedin.com/in/hammed-adewumi-afenifere-2169a5116/" target="_blank" rel="noopener">LinkedIn</a>
+      <a href="https://www.oneremit.co" target="_blank" rel="noopener">Oneremit</a>
+      <a href="https://www.sparktechs.ca" target="_blank" rel="noopener">Spark Tech Hub</a>
+    </div>
+  </footer>
+
+  <script>
+    // Theme toggle logic
+    function initTheme() {
+      const toggleBtn = document.getElementById('theme-toggle');
+      if (!toggleBtn) return;
+      toggleBtn.addEventListener('click', () => {
+        if (document.documentElement.classList.contains('dark')) {
+          document.documentElement.classList.remove('dark');
+          localStorage.setItem('theme', 'light');
+        } else {
+          document.documentElement.classList.add('dark');
+          localStorage.setItem('theme', 'dark');
+        }
+      });
+    }
+
+    // Stats counter animation
+    function animateStats() {
+      const stats = document.querySelectorAll('.stat-number[data-target]');
+      stats.forEach(stat => {
+        const target = parseInt(stat.getAttribute('data-target'), 10);
+        const suffix = stat.getAttribute('data-suffix') || '';
+        const prefix = stat.textContent.startsWith('$') ? '$' : '';
+        let current = 0;
+        const duration = 1500; // 1.5s
+        const increment = target > 50 ? Math.ceil(target / 50) : 1;
+        const intervalTime = Math.max(10, Math.floor(duration / (target / increment)));
+        
+        const timer = setInterval(() => {
+          current += increment;
+          if (current >= target) {
+            current = target;
+            clearInterval(timer);
+          }
+          stat.textContent = `${prefix}${current}${suffix}`;
+        }, intervalTime);
+      });
+    }
+
+    function initStatsAnimation() {
+      const statRow = document.querySelector('.stat-row');
+      if (!statRow) return;
+      
+      const observer = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            animateStats();
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.2 });
+      
+      observer.observe(statRow);
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+      initTheme();
+      initStatsAnimation();
+    });
+  </script>
+
+</body>
+</html>

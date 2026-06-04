@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <script>
+    if (localStorage.getItem('theme') === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+      document.documentElement.classList.add('dark');
+    } else {
+      document.documentElement.classList.remove('dark');
+    }
+  </script>
+
+  <!-- Primary SEO -->
+  <title>Gallery — Hammed Afenifere | Events & Conferences</title>
+  <meta name="description" content="Photos from conferences, summits, and events attended by Hammed Afenifere — CAFS 2025, Abuja Payments Summit, Lagos Leadership Breakfast, Ottawa AI Summit, and more.">
+  <meta name="author" content="Hammed Afenifere">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://hammedafenifere.com/gallery.html">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Event Gallery — Hammed Afenifere">
+  <meta property="og:description" content="Photos from global fintech conferences, summits, and events.">
+  <meta property="og:url" content="https://hammedafenifere.com/gallery.html">
+  <meta property="og:site_name" content="Hammed Afenifere">
+  <meta property="og:image" content="https://hammedafenifere.com/og-image.jpg">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Event Gallery — Hammed Afenifere">
+  <meta name="twitter:description" content="Photos from global fintech conferences and summits.">
+  <meta name="twitter:image" content="https://hammedafenifere.com/og-image.jpg">
+
+  <!-- JSON-LD -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ImageGallery",
+    "name": "Event Gallery — Hammed Afenifere",
+    "url": "https://hammedafenifere.com/gallery.html",
+    "description": "Photos from global fintech conferences, summits, and events attended by Hammed Afenifere.",
+    "author": {
+      "@type": "Person",
+      "name": "Hammed Afenifere",
+      "url": "https://hammedafenifere.com"
+    }
+  }
+  </script>
+
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="split-page">
+
+  <nav>
+    <a href="index.html">home</a>
+    <a href="about.html">about</a>
+    <a href="articles.html">blog</a>
+    <a href="conferences.html">conferences</a>
+    <a href="gallery.html" class="active">gallery</a>
+    <a href="press.html">press &amp; media</a>
+    <a href="contact.html">contact</a>
+    <button id="theme-toggle" class="theme-toggle-btn" aria-label="Toggle theme">
+      <svg class="sun-icon" viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
+        <circle cx="12" cy="12" r="5"></circle>
+        <line x1="12" y1="1" x2="12" y2="3"></line>
+        <line x1="12" y1="21" x2="12" y2="23"></line>
+        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+        <line x1="1" y1="12" x2="3" y2="12"></line>
+        <line x1="21" y1="12" x2="23" y2="12"></line>
+        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+      </svg>
+      <svg class="moon-icon" viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+      </svg>
+    </button>
+  </nav>
+
+  <div class="split-layout">
+    <aside class="sidebar-info">
+      <!-- Headshot -->
+      <img
+        src="https://s3.amazonaws.com/cco-avatars/91acd1dc-1a3b-40e7-b0a4-964e12e3f699.png"
+        alt="Hammed Afenifere"
+        class="headshot"
+      >
+      <h1>Hammed Afenifere</h1>
+      <p class="sidebar-bio">CEO &amp; Co-Founder, <a href="https://www.sparktechs.ca" target="_blank" rel="noopener">Spark Tech Hub</a> — a licensed Canadian fintech company behind <a href="https://www.oneremit.co" target="_blank" rel="noopener">Oneremit</a> and <a href="https://www.payremit.io" target="_blank" rel="noopener">Payremit</a>. Building compliant payment infrastructure that unlocks trade between emerging markets and the rest of the world.</p>
+      
+      <!-- Stats sit right below bio inside the sidebar -->
+      <div class="stat-row">
+        <div class="stat">
+          <span class="stat-number" data-target="100" data-suffix="M+">$100M+</span>
+          <span class="stat-label">Processed in payments</span>
+        </div>
+        <div class="stat">
+          <span class="stat-number" data-target="4" data-suffix="">4</span>
+          <span class="stat-label">Regulatory licences</span>
+        </div>
+        <div class="stat">
+          <span class="stat-number" data-target="5" data-suffix="">5</span>
+          <span class="stat-label">Countries</span>
+        </div>
+      </div>
+    </aside>
+
+    <main class="main-content">
+
+  <h1>Gallery</h1>
+  <p class="gallery-intro">Events, conferences, and moments from the field.</p>
+
+  <hr>
+
+  <h2>2025</h2>
+
+  <div class="gallery-grid">
+
+    <!-- CAFS 2025 -->
+    <div class="gallery-item" id="gallery-cafs" onclick="openLightbox(this)">
+      <div class="gallery-placeholder">
+        <div class="gallery-placeholder-icon">📸</div>
+        <div class="gallery-placeholder-label">CAFS 2025</div>
+        <div class="gallery-placeholder-sub">Canada-Africa Fintech Summit</div>
+      </div>
+      <div class="gallery-caption">
+        <span class="gallery-caption-event">Canada-Africa Fintech Summit</span>
+        <span class="gallery-caption-date">2025 · Toronto</span>
+      </div>
+    </div>
+
+    <!-- Abuja Payments Summit -->
+    <div class="gallery-item" id="gallery-abuja" onclick="openLightbox(this)">
+      <div class="gallery-placeholder">
+        <div class="gallery-placeholder-icon">📸</div>
+        <div class="gallery-placeholder-label">Abuja Summit</div>
+        <div class="gallery-placeholder-sub">West Africa Payments Summit</div>
+      </div>
+      <div class="gallery-caption">
+        <span class="gallery-caption-event">West Africa Payments Summit</span>
+        <span class="gallery-caption-date">November 2025 · Abuja</span>
+      </div>
+    </div>
+
+    <!-- Lagos Leadership Breakfast -->
+    <div class="gallery-item" id="gallery-lagos" onclick="openLightbox(this)">
+      <div class="gallery-placeholder">
+        <div class="gallery-placeholder-icon">📸</div>
+        <div class="gallery-placeholder-label">Lagos Breakfast</div>
+        <div class="gallery-placeholder-sub">Payments Leadership Breakfast</div>
+      </div>
+      <div class="gallery-caption">
+        <span class="gallery-caption-event">Payments Leadership Breakfast</span>
+        <span class="gallery-caption-date">October 2025 · Lagos</span>
+      </div>
+    </div>
+
+    <!-- Ottawa AI Summit -->
+    <div class="gallery-item" id="gallery-ottawa" onclick="openLightbox(this)">
+      <div class="gallery-placeholder">
+        <div class="gallery-placeholder-icon">📸</div>
+        <div class="gallery-placeholder-label">Ottawa AI Summit</div>
+        <div class="gallery-placeholder-sub">Responsible AI Summit — Panelist</div>
+      </div>
+      <div class="gallery-caption">
+        <span class="gallery-caption-event">Ottawa Responsible AI Summit</span>
+        <span class="gallery-caption-date">2025 · Ottawa</span>
+      </div>
+    </div>
+
+    <!-- HackWestern -->
+    <div class="gallery-item" id="gallery-hackwestern" onclick="openLightbox(this)">
+      <div class="gallery-placeholder">
+        <div class="gallery-placeholder-icon">📸</div>
+        <div class="gallery-placeholder-label">HackWestern 2025</div>
+        <div class="gallery-placeholder-sub">Mentor</div>
+      </div>
+      <div class="gallery-caption">
+        <span class="gallery-caption-event">HackWestern 2025</span>
+        <span class="gallery-caption-date">2025 · London, Ontario</span>
+      </div>
+    </div>
+
+    <!-- UofT Hack -->
+    <div class="gallery-item" id="gallery-uoft" onclick="openLightbox(this)">
+      <div class="gallery-placeholder">
+        <div class="gallery-placeholder-icon">📸</div>
+        <div class="gallery-placeholder-label">UofT Hack</div>
+        <div class="gallery-placeholder-sub">Judge</div>
+      </div>
+      <div class="gallery-caption">
+        <span class="gallery-caption-event">University of Toronto Hack</span>
+        <span class="gallery-caption-date">2025 · Toronto</span>
+      </div>
+    </div>
+
+  </div>
+
+
+
+    </main>
+  </div> <!-- end of split-layout -->
+
+  <hr>
+
+  <footer>
+    <span>&copy; 2026 Hammed Afenifere</span>
+    <div class="footer-links">
+      <a href="https://www.linkedin.com/in/hammed-adewumi-afenifere-2169a5116/" target="_blank" rel="noopener">LinkedIn</a>
+      <a href="https://www.oneremit.co" target="_blank" rel="noopener">Oneremit</a>
+      <a href="https://www.sparktechs.ca" target="_blank" rel="noopener">Spark Tech Hub</a>
+    </div>
+  </footer>
+
+  <!-- Lightbox -->
+  <div class="lightbox" id="lightbox" onclick="closeLightbox()">
+    <span class="lightbox-close" onclick="closeLightbox()">&times;</span>
+    <img id="lightbox-img" src="" alt="">
+    <div class="lightbox-info" id="lightbox-info"></div>
+  </div>
+
+  <script>
+    // Theme toggle logic
+    function initTheme() {
+      const toggleBtn = document.getElementById('theme-toggle');
+      if (!toggleBtn) return;
+      toggleBtn.addEventListener('click', () => {
+        if (document.documentElement.classList.contains('dark')) {
+          document.documentElement.classList.remove('dark');
+          localStorage.setItem('theme', 'light');
+        } else {
+          document.documentElement.classList.add('dark');
+          localStorage.setItem('theme', 'dark');
+        }
+      });
+    }
+
+    // Stats counter animation
+    function animateStats() {
+      const stats = document.querySelectorAll('.stat-number[data-target]');
+      stats.forEach(stat => {
+        const target = parseInt(stat.getAttribute('data-target'), 10);
+        const suffix = stat.getAttribute('data-suffix') || '';
+        const prefix = stat.textContent.startsWith('$') ? '$' : '';
+        let current = 0;
+        const duration = 1500; // 1.5s
+        const increment = target > 50 ? Math.ceil(target / 50) : 1;
+        const intervalTime = Math.max(10, Math.floor(duration / (target / increment)));
+        
+        const timer = setInterval(() => {
+          current += increment;
+          if (current >= target) {
+            current = target;
+            clearInterval(timer);
+          }
+          stat.textContent = `${prefix}${current}${suffix}`;
+        }, intervalTime);
+      });
+    }
+
+    function initStatsAnimation() {
+      const statRow = document.querySelector('.stat-row');
+      if (!statRow) return;
+      
+      const observer = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            animateStats();
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.2 });
+      
+      observer.observe(statRow);
+    }
+
+    function openLightbox(el) {
+      const img = el.querySelector('img');
+      if (!img) return; // no photo yet — placeholder only
+      const caption = el.querySelector('.gallery-caption-event');
+      const date = el.querySelector('.gallery-caption-date');
+      document.getElementById('lightbox-img').src = img.src;
+      document.getElementById('lightbox-img').alt = caption ? caption.textContent : '';
+      document.getElementById('lightbox-info').innerHTML =
+        (caption ? `<strong>${caption.textContent}</strong>` : '') +
+        (date ? `<br><span style="opacity:.7;font-size:11px">${date.textContent}</span>` : '');
+      document.getElementById('lightbox').classList.add('open');
+      document.body.style.overflow = 'hidden';
+    }
+    function closeLightbox() {
+      document.getElementById('lightbox').classList.remove('open');
+      document.body.style.overflow = '';
+    }
+    document.addEventListener('keydown', e => { if (e.key === 'Escape') closeLightbox(); });
+
+    document.addEventListener('DOMContentLoaded', () => {
+      initTheme();
+      initStatsAnimation();
+    });
+  </script>
+
+</body>
+</html>

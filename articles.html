@@ -1,0 +1,480 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <script>
+    if (localStorage.getItem('theme') === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+      document.documentElement.classList.add('dark');
+    } else {
+      document.documentElement.classList.remove('dark');
+    }
+  </script>
+
+  <!-- Primary SEO -->
+  <title>Blog & Articles - Hammed Afenifere | Cross-Border Payments & Emerging Markets</title>
+  <meta name="description" content="Writing and published articles by Hammed Afenifere on cross-border payments, emerging markets, trade finance, and building compliant fintech.">
+  <meta name="author" content="Hammed Afenifere">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://hammedafenifere.com/articles.html">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Articles by Hammed Afenifere">
+  <meta property="og:description" content="Writing on cross-border payments, emerging markets, trade finance, and building compliant fintech infrastructure.">
+  <meta property="og:url" content="https://hammedafenifere.com/articles.html">
+  <meta property="og:site_name" content="Hammed Afenifere">
+  <meta property="og:image" content="https://hammedafenifere.com/og-image.jpg">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Articles by Hammed Afenifere">
+  <meta name="twitter:description" content="Writing on cross-border payments, emerging markets, and building compliant fintech.">
+  <meta name="twitter:image" content="https://hammedafenifere.com/og-image.jpg">
+
+  <!-- JSON-LD -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "CollectionPage",
+    "name": "Articles by Hammed Afenifere",
+    "url": "https://hammedafenifere.com/articles.html",
+    "description": "Published writing on cross-border payments, emerging markets, trade finance, and fintech regulation.",
+    "author": {
+      "@type": "Person",
+      "name": "Hammed Afenifere",
+      "url": "https://hammedafenifere.com"
+    },
+    "hasPart": [
+      {
+        "@type": "Article",
+        "name": "Digitizing the Dollar: The Rise of Modern B2B Payments in Emerging Markets",
+        "url": "https://techeconomy.ng/digitizing-the-dollar-the-rise-of-modern-in-african-b2b-payments/",
+        "publisher": { "@type": "Organization", "name": "Techeconomy" }
+      },
+      {
+        "@type": "Article",
+        "name": "20 Jobs and Roles Humans Do Better Than AI",
+        "url": "https://www.forbes.com/councils/forbesbusinesscouncil/2025/11/13/20-jobs-and-roles-humans-do-better-than-ai/",
+        "publisher": { "@type": "Organization", "name": "Forbes Business Council" }
+      }
+    ]
+  }
+  </script>
+
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="split-page">
+
+  <nav>
+    <a href="index.html">home</a>
+    <a href="about.html">about</a>
+    <a href="articles.html" class="active">blog</a>
+    <a href="conferences.html">conferences</a>
+    <a href="gallery.html">gallery</a>
+    <a href="press.html">press &amp; media</a>
+    <a href="contact.html">contact</a>
+    <button id="theme-toggle" class="theme-toggle-btn" aria-label="Toggle theme">
+      <svg class="sun-icon" viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
+        <circle cx="12" cy="12" r="5"></circle>
+        <line x1="12" y1="1" x2="12" y2="3"></line>
+        <line x1="12" y1="21" x2="12" y2="23"></line>
+        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+        <line x1="1" y1="12" x2="3" y2="12"></line>
+        <line x1="21" y1="12" x2="23" y2="12"></line>
+        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+      </svg>
+      <svg class="moon-icon" viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+      </svg>
+    </button>
+  </nav>
+
+  <div class="split-layout">
+    <aside class="sidebar-info">
+      <!-- Headshot -->
+      <img
+        src="https://s3.amazonaws.com/cco-avatars/91acd1dc-1a3b-40e7-b0a4-964e12e3f699.png"
+        alt="Hammed Afenifere"
+        class="headshot"
+      >
+      <h1>Hammed Afenifere</h1>
+      <p class="sidebar-bio">CEO &amp; Co-Founder, <a href="https://www.sparktechs.ca" target="_blank" rel="noopener">Spark Tech Hub</a> — a licensed Canadian fintech company behind <a href="https://www.oneremit.co" target="_blank" rel="noopener">Oneremit</a> and <a href="https://www.payremit.io" target="_blank" rel="noopener">Payremit</a>. Building compliant payment infrastructure that unlocks trade between emerging markets and the rest of the world.</p>
+      
+      <!-- Stats sit right below bio inside the sidebar -->
+      <div class="stat-row">
+        <div class="stat">
+          <span class="stat-number" data-target="100" data-suffix="M+">$100M+</span>
+          <span class="stat-label">Processed in payments</span>
+        </div>
+        <div class="stat">
+          <span class="stat-number" data-target="4" data-suffix="">4</span>
+          <span class="stat-label">Regulatory licences</span>
+        </div>
+        <div class="stat">
+          <span class="stat-number" data-target="5" data-suffix="">5</span>
+          <span class="stat-label">Countries</span>
+        </div>
+      </div>
+    </aside>
+
+    <main class="main-content">
+      <h1>Articles</h1>
+      <p>Writing on cross-border payments, emerging markets, trade facilitation, and what it actually takes to build compliant financial infrastructure.</p>
+
+      <hr>
+
+      <h2>Blog</h2>
+
+      <div id="blog-entries">
+    <div class="entry compact" data-post-id="b2b-payments">
+      <div class="entry-date">May 2026</div>
+      <div class="entry-title"><a href="post.html?id=b2b-payments&title=Digital%20Infrastructure%20and%20the%20Future%20of%20Emerging%20Market%20B2B%20Payments&date=May%202026">Digital Infrastructure and the Future of Emerging Market B2B Payments</a></div>
+      <div class="entry-excerpt">How modern payment networks are rewriting cross-border commerce in emerging markets and beyond.</div>
+      <div class="entry-actions">
+        <button class="like-button" data-post-id="b2b-payments" aria-label="Like post">
+          <svg class="heart-icon" viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
+          </svg>
+          <span class="like-count">42</span>
+        </button>
+      </div>
+    </div>
+
+    <div class="entry compact" data-post-id="payment-friction">
+      <div class="entry-date">May 2026</div>
+      <div class="entry-title"><a href="post.html?id=payment-friction&title=The%20Real%20Cost%20of%20Payment%20Friction%20for%20Emerging%20Market%20Businesses&date=May%202026">The Real Cost of Payment Friction for Emerging Market Businesses</a></div>
+      <div class="entry-excerpt">What businesses in emerging markets lose every time a cross-border transfer fails or costs too much.</div>
+      <div class="entry-actions">
+        <button class="like-button" data-post-id="payment-friction" aria-label="Like post">
+          <svg class="heart-icon" viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
+          </svg>
+          <span class="like-count">51</span>
+        </button>
+      </div>
+    </div>
+
+    <div class="entry compact" data-post-id="concierge-first">
+      <div class="entry-date">April 2026</div>
+      <div class="entry-title"><a href="post.html?id=concierge-first&title=Why%20We%20Built%20Oneremit%20as%20a%20Concierge%20First&date=April%202026">Why We Built Oneremit as a Concierge First</a></div>
+      <div class="entry-excerpt">Starting manual isn't weakness — it's how you learn what your customers actually need.</div>
+      <div class="entry-actions">
+        <button class="like-button" data-post-id="concierge-first" aria-label="Like post">
+          <svg class="heart-icon" viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
+          </svg>
+          <span class="like-count">28</span>
+        </button>
+      </div>
+    </div>
+
+    <div class="entry compact" data-post-id="compliance-feature">
+      <div class="entry-date">March 2026</div>
+      <div class="entry-title"><a href="post.html?id=compliance-feature&title=Regulatory%20Compliance%20Is%20a%20Feature,%20Not%20a%20Bug&date=March%202026">Regulatory Compliance Is a Feature, Not a Bug</a></div>
+      <div class="entry-excerpt">FinCEN, MSB, FINTRAC — why licensing across three jurisdictions matters more than speed.</div>
+      <div class="entry-actions">
+        <button class="like-button" data-post-id="compliance-feature" aria-label="Like post">
+          <svg class="heart-icon" viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
+          </svg>
+          <span class="like-count">35</span>
+        </button>
+      </div>
+    </div>
+
+    <div class="entry compact" data-post-id="emerging-market-trade">
+      <div class="entry-date">February 2026</div>
+      <div class="entry-title"><a href="post.html?id=emerging-market-trade&title=Africa%20and%20the%20West%20Are%20Better%20Trade%20Partners%20Than%20the%20Payment%20System%20Allows&date=February%202026">Africa and the West Are Better Trade Partners Than the Payment System Allows</a></div>
+      <div class="entry-excerpt">The demand is real on both sides. What is missing is the infrastructure to close the deal.</div>
+      <div class="entry-actions">
+        <button class="like-button" data-post-id="emerging-market-trade" aria-label="Like post">
+          <svg class="heart-icon" viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
+          </svg>
+          <span class="like-count">64</span>
+        </button>
+      </div>
+    </div>
+
+    <div class="entry compact" data-post-id="lessons-100m">
+      <div class="entry-date">January 2026</div>
+      <div class="entry-title"><a href="post.html?id=lessons-100m&title=Building%20in%20Public:%20Lessons%20from%20Our%20First%20$100M&date=January%202026">Building in Public: Lessons from Our First $100M</a></div>
+      <div class="entry-excerpt">Transparency, trust, and the uncomfortable truths we learned processing $100M in cross-border payments.</div>
+      <div class="entry-actions">
+        <button class="like-button" data-post-id="lessons-100m" aria-label="Like post">
+          <svg class="heart-icon" viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
+          </svg>
+          <span class="like-count">78</span>
+        </button>
+      </div>
+    </div>
+
+    <div class="entry compact" data-post-id="licensing-moat">
+      <div class="entry-date">December 2025</div>
+      <div class="entry-title"><a href="post.html?id=licensing-moat&title=Why%20Licensing%20in%205%20Jurisdictions%20is%20Our%20Competitive%20Moat&date=December%202025">Why Licensing in 5 Jurisdictions is Our Competitive Moat</a></div>
+      <div class="entry-excerpt">How Canada MSB, USA FinCEN, and Nigeria IMTO licenses establish trust with global banking partners.</div>
+      <div class="entry-actions">
+        <button class="like-button" data-post-id="licensing-moat" aria-label="Like post">
+          <svg class="heart-icon" viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
+          </svg>
+          <span class="like-count">49</span>
+        </button>
+      </div>
+    </div>
+
+    <div class="entry compact" data-post-id="scaling-spark">
+      <div class="entry-date">November 2025</div>
+      <div class="entry-title"><a href="post.html?id=scaling-spark&title=Scaling%20Spark%20Tech%20Hub:%20Building%20Ecosystems%20for%20Emerging%20Market%20Fintechs&date=November%202025">Scaling Spark Tech Hub: Building Ecosystems for Emerging Market Fintechs</a></div>
+      <div class="entry-excerpt">How we are supporting the next generation of founders to build payment infrastructure.</div>
+      <div class="entry-actions">
+        <button class="like-button" data-post-id="scaling-spark" aria-label="Like post">
+          <svg class="heart-icon" viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
+          </svg>
+          <span class="like-count">57</span>
+        </button>
+      </div>
+    </div>
+
+    <div class="entry compact" data-post-id="diaspora-flows">
+      <div class="entry-date">October 2025</div>
+      <div class="entry-title"><a href="post.html?id=diaspora-flows&title=Diaspora%20Flows:%20The%20Evolution%20of%20Payremit%20Payments&date=October%202025">Diaspora Flows: The Evolution of Payremit Payments</a></div>
+      <div class="entry-excerpt">Why diaspora payment channels need compliant infrastructure to reduce remittance fees.</div>
+      <div class="entry-actions">
+        <button class="like-button" data-post-id="diaspora-flows" aria-label="Like post">
+          <svg class="heart-icon" viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
+          </svg>
+          <span class="like-count">39</span>
+        </button>
+      </div>
+    </div>
+
+    <div class="entry compact" data-post-id="five-year-outlook">
+      <div class="entry-date">September 2025</div>
+      <div class="entry-title"><a href="post.html?id=five-year-outlook&title=The%20Future%20of%20B2B%20Payments%20in%20Emerging%20Markets:%20A%205-Year%20Outlook&date=September%202025">The Future of B2B Payments in Emerging Markets: A 5-Year Outlook</a></div>
+      <div class="entry-excerpt">How emerging payment networks will bridge LATAM, Africa, and Western trade corridors.</div>
+      <div class="entry-actions">
+        <button class="like-button" data-post-id="five-year-outlook" aria-label="Like post">
+          <svg class="heart-icon" viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
+          </svg>
+          <span class="like-count">83</span>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <div class="pagination-container" id="pagination-controls"></div>
+
+  <hr>
+
+  <h2>Forbes Business Council</h2>
+
+  <span class="list-item">
+    <a href="https://www.forbes.com/councils/forbesbusinesscouncil/2026/02/05/why-digital-payments-could-become-key-business-infrastructure-not-just-a-financial-experiment/" target="_blank" rel="noopener">Why Digital Payments Could Become Key Business Infrastructure, Not Just A Financial Experiment</a>
+    <span class="source">— Feb 2026</span>
+  </span>
+  <span class="list-item">
+    <a href="https://www.forbes.com/councils/forbesbusinesscouncil/2026/01/27/how-fintech-leaders-can-balance-expansion-compliance-and-culture/" target="_blank" rel="noopener">How Fintech Leaders Can Balance Expansion, Compliance And Culture</a>
+    <span class="source">— Jan 2026</span>
+  </span>
+  <span class="list-item">
+    <a href="https://www.forbes.com/councils/forbesbusinesscouncil/2025/12/09/emerging-markets-as-a-frontier-for-global-payments-technology/" target="_blank" rel="noopener">Emerging Markets As A Frontier For Global Payments Technology</a>
+    <span class="source">— Dec 2025</span>
+  </span>
+  <span class="list-item">
+    <a href="https://www.forbes.com/councils/forbesbusinesscouncil/2025/11/13/20-jobs-and-roles-humans-do-better-than-ai/" target="_blank" rel="noopener">20 Jobs And Roles Humans Do Better Than AI</a>
+    <span class="source">— Nov 2025</span>
+  </span>
+
+  <h2>Other Publications</h2>
+
+  <span class="list-item">
+    <a href="https://techeconomy.ng/digitizing-the-dollar-the-rise-of-modern-in-african-b2b-payments/" target="_blank" rel="noopener">Digitizing the Dollar: The Rise of Modern B2B Payments in Emerging Markets</a>
+    <span class="source">— Techeconomy</span>
+  </span>
+
+    </main>
+  </div> <!-- end of split-layout -->
+
+  <hr>
+
+  <footer>
+    <span>&copy; 2026 Hammed Afenifere</span>
+    <div class="footer-links">
+      <a href="https://www.linkedin.com/in/hammed-adewumi-afenifere-2169a5116/" target="_blank" rel="noopener">LinkedIn</a>
+      <a href="https://www.oneremit.co" target="_blank" rel="noopener">Oneremit</a>
+      <a href="https://www.sparktechs.ca" target="_blank" rel="noopener">Spark Tech Hub</a>
+    </div>
+  </footer>
+
+  <script>
+    // Theme toggle logic
+    function initTheme() {
+      const toggleBtn = document.getElementById('theme-toggle');
+      if (!toggleBtn) return;
+      toggleBtn.addEventListener('click', () => {
+        if (document.documentElement.classList.contains('dark')) {
+          document.documentElement.classList.remove('dark');
+          localStorage.setItem('theme', 'light');
+        } else {
+          document.documentElement.classList.add('dark');
+          localStorage.setItem('theme', 'dark');
+        }
+      });
+    }
+
+    // Dynamic Seed Likes generator (random but below 20)
+    function getSeedLikes(postId) {
+      let seed = localStorage.getItem(`seed_likes_${postId}`);
+      if (!seed) {
+        // Random number from 5 to 19 inclusive (strictly below 20)
+        seed = Math.floor(Math.random() * 15) + 5;
+        localStorage.setItem(`seed_likes_${postId}`, seed);
+      }
+      return parseInt(seed, 10);
+    }
+
+    function initLikes() {
+      document.querySelectorAll('.like-button').forEach(btn => {
+        const postId = btn.getAttribute('data-post-id');
+        const isLiked = localStorage.getItem(`liked_${postId}`) === 'true';
+        const countElement = btn.querySelector('.like-count');
+        
+        let baseCount = getSeedLikes(postId);
+        if (isLiked) {
+          btn.classList.add('liked');
+          countElement.textContent = baseCount + 1;
+        } else {
+          countElement.textContent = baseCount;
+        }
+        
+        btn.addEventListener('click', (e) => {
+          e.preventDefault();
+          e.stopPropagation();
+          toggleLike(postId);
+        });
+      });
+    }
+
+    function toggleLike(postId) {
+      const btn = document.querySelector(`.like-button[data-post-id="${postId}"]`);
+      if (!btn) return;
+      
+      const countElement = btn.querySelector('.like-count');
+      const isLiked = btn.classList.contains('liked');
+      let baseCount = getSeedLikes(postId);
+      
+      if (isLiked) {
+        btn.classList.remove('liked');
+        localStorage.setItem(`liked_${postId}`, 'false');
+        countElement.textContent = baseCount;
+      } else {
+        btn.classList.add('liked');
+        localStorage.setItem(`liked_${postId}`, 'true');
+        countElement.textContent = baseCount + 1;
+      }
+    }
+
+    // Stats counter animation
+    function animateStats() {
+      const stats = document.querySelectorAll('.stat-number[data-target]');
+      stats.forEach(stat => {
+        const target = parseInt(stat.getAttribute('data-target'), 10);
+        const suffix = stat.getAttribute('data-suffix') || '';
+        const prefix = stat.textContent.startsWith('$') ? '$' : '';
+        let current = 0;
+        const duration = 1500; // 1.5s
+        const increment = target > 50 ? Math.ceil(target / 50) : 1;
+        const intervalTime = Math.max(10, Math.floor(duration / (target / increment)));
+        
+        const timer = setInterval(() => {
+          current += increment;
+          if (current >= target) {
+            current = target;
+            clearInterval(timer);
+          }
+          stat.textContent = `${prefix}${current}${suffix}`;
+        }, intervalTime);
+      });
+    }
+
+    function initStatsAnimation() {
+      const statRow = document.querySelector('.stat-row');
+      if (!statRow) return;
+      
+      const observer = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            animateStats();
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.2 });
+      
+      observer.observe(statRow);
+    }
+
+    // Pagination logic
+    const ITEMS_PER_PAGE = 4; // 4 items per page to show pages 1, 2, 3 for 10 articles
+    let currentPage = 1;
+
+    function renderPagination() {
+      const entries = Array.from(document.querySelectorAll('#blog-entries .entry'));
+      const totalPages = Math.ceil(entries.length / ITEMS_PER_PAGE);
+      const controls = document.getElementById('pagination-controls');
+      if (!controls) return;
+      
+      controls.innerHTML = '';
+      
+      // Do not display page controls if there's only 1 page
+      if (totalPages <= 1) return;
+      
+      for (let i = 1; i <= totalPages; i++) {
+        const btn = document.createElement('button');
+        btn.className = `page-btn ${i === currentPage ? 'active' : ''}`;
+        btn.textContent = i;
+        btn.setAttribute('aria-label', `Go to page ${i}`);
+        btn.addEventListener('click', () => {
+          currentPage = i;
+          showPage(currentPage);
+          // Smooth scroll back to Blog header on change
+          document.querySelector('h2').scrollIntoView({ behavior: 'smooth' });
+        });
+        controls.appendChild(btn);
+      }
+    }
+
+    function showPage(page) {
+      const entries = document.querySelectorAll('#blog-entries .entry');
+      const start = (page - 1) * ITEMS_PER_PAGE;
+      const end = start + ITEMS_PER_PAGE;
+      
+      entries.forEach((entry, idx) => {
+        if (idx >= start && idx < end) {
+          entry.style.display = 'block';
+        } else {
+          entry.style.display = 'none';
+        }
+      });
+      
+      renderPagination();
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+      initTheme();
+      initLikes();
+      initStatsAnimation();
+      showPage(1); // init first page view
+    });
+  </script>
+
+</body>
+</html>
