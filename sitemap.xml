@@ -2,43 +2,43 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
   <url>
-    <loc>https://hammedafenifere.com/</loc>
+    <loc>https://www.hammed.ca/</loc>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
 
   <url>
-    <loc>https://hammedafenifere.com/about.html</loc>
+    <loc>https://www.hammed.ca/about.html</loc>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
 
   <url>
-    <loc>https://hammedafenifere.com/articles.html</loc>
+    <loc>https://www.hammed.ca/articles.html</loc>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
 
   <url>
-    <loc>https://hammedafenifere.com/conferences.html</loc>
+    <loc>https://www.hammed.ca/conferences.html</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
 
   <url>
-    <loc>https://hammedafenifere.com/gallery.html</loc>
+    <loc>https://www.hammed.ca/gallery.html</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
 
   <url>
-    <loc>https://hammedafenifere.com/press.html</loc>
+    <loc>https://www.hammed.ca/press.html</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
 
   <url>
-    <loc>https://hammedafenifere.com/contact.html</loc>
+    <loc>https://www.hammed.ca/contact.html</loc>
     <changefreq>yearly</changefreq>
     <priority>0.6</priority>
   </url>
