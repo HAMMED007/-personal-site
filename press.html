@@ -147,57 +147,13 @@
 
   <!-- ── Forbes Business Council ────────── -->
   <h2>Forbes Business Council</h2>
-
-  <span class="list-item">
-    <a href="https://www.forbes.com/councils/forbesbusinesscouncil/2026/02/05/why-digital-payments-could-become-key-business-infrastructure-not-just-a-financial-experiment/" target="_blank" rel="noopener">Why Digital Payments Could Become Key Business Infrastructure, Not Just A Financial Experiment</a>
-    <span class="source">— Feb 2026</span>
-  </span>
-  <span class="list-item">
-    <a href="https://www.forbes.com/councils/forbesbusinesscouncil/2026/01/27/how-fintech-leaders-can-balance-expansion-compliance-and-culture/" target="_blank" rel="noopener">How Fintech Leaders Can Balance Expansion, Compliance And Culture</a>
-    <span class="source">— Jan 2026</span>
-  </span>
-  <span class="list-item">
-    <a href="https://www.forbes.com/councils/forbesbusinesscouncil/2025/12/09/emerging-markets-as-a-frontier-for-global-payments-technology/" target="_blank" rel="noopener">Emerging Markets As A Frontier For Global Payments Technology</a>
-    <span class="source">— Dec 2025</span>
-  </span>
-  <span class="list-item">
-    <a href="https://www.forbes.com/councils/forbesbusinesscouncil/2025/11/13/20-jobs-and-roles-humans-do-better-than-ai/" target="_blank" rel="noopener">20 Jobs And Roles Humans Do Better Than AI</a>
-    <span class="source">— Nov 2025</span>
-  </span>
+  <div id="forbes-container"></div>
 
   <hr>
 
   <!-- ── Other Media Coverage ───────────── -->
   <h2>Media Coverage</h2>
-
-  <span class="list-item">
-    <a href="https://techeconomy.ng/digitizing-the-dollar-the-rise-of-modern-in-african-b2b-payments/" target="_blank" rel="noopener">Digitizing the Dollar: The Rise of Modern B2B Payments in Emerging Markets</a>
-    <span class="source">— Techeconomy</span>
-  </span>
-  <span class="list-item">
-    <a href="https://thecondia.com/partners/oneremit-advocates-cross-border-payments-cafs2025/" target="_blank" rel="noopener">Oneremit advocates for seamless cross-border payments at CAFS 2025</a>
-    <span class="source">— The Condia</span>
-  </span>
-  <span class="list-item">
-    <a href="https://thecondia.com/oneremit-cross-border-payments-africa/" target="_blank" rel="noopener">How Oneremit processed over $20M in H1 2025 with a concierge model</a>
-    <span class="source">— The Condia</span>
-  </span>
-  <span class="list-item">
-    <a href="https://bitcoinke.io/2025/09/oneremit-milestone-in-h1-2025/" target="_blank" rel="noopener">How Nigerian Fintech OneRemit Processed Over $20M in Cross-Border Payments</a>
-    <span class="source">— BitcoinKE</span>
-  </span>
-  <span class="list-item">
-    <a href="https://www.ibtimes.co.uk/building-trust-across-borders-how-oneremit-giving-african-smes-fair-path-global-commerce-1756989" target="_blank" rel="noopener">Building Trust Across Borders: Oneremit and African SMEs</a>
-    <span class="source">— IBTimes</span>
-  </span>
-  <span class="list-item">
-    <a href="https://betakit.com/the-feds-get-4000-website-complaints-a-day-can-a-responsible-ai-chatbot-untangle-the-mess/" target="_blank" rel="noopener">Can a "responsible" AI chatbot untangle government complaints?</a>
-    <span class="source">— BetaKit</span>
-  </span>
-  <span class="list-item">
-    <a href="https://cedirates.com/news/how-oneremit-processed-over-20-million-in-h1-2025-with-a-concierge-model/" target="_blank" rel="noopener">Oneremit processed over $20M in H1 2025</a>
-    <span class="source">— CediRATES</span>
-  </span>
+  <div id="media-container"></div>
 
     </main>
   </div> <!-- end of split-layout -->
@@ -268,9 +224,49 @@
       observer.observe(statRow);
     }
 
+    async function loadPress() {
+      try {
+        const response = await fetch('/content/press.json');
+        if (!response.ok) throw new Error('Failed to fetch press database');
+        const data = await response.json();
+
+        const forbesContainer = document.getElementById('forbes-container');
+        const mediaContainer = document.getElementById('media-container');
+
+        if (forbesContainer && data.forbes) {
+          forbesContainer.innerHTML = '';
+          data.forbes.forEach(item => {
+            const span = document.createElement('span');
+            span.className = 'list-item';
+            span.innerHTML = `
+              <a href="${item.url}" target="_blank" rel="noopener">${item.title}</a>
+              <span class="source">— ${item.source}</span>
+            `;
+            forbesContainer.appendChild(span);
+          });
+        }
+
+        if (mediaContainer && data.media) {
+          mediaContainer.innerHTML = '';
+          data.media.forEach(item => {
+            const span = document.createElement('span');
+            span.className = 'list-item';
+            span.innerHTML = `
+              <a href="${item.url}" target="_blank" rel="noopener">${item.title}</a>
+              <span class="source">— ${item.source}</span>
+            `;
+            mediaContainer.appendChild(span);
+          });
+        }
+      } catch (err) {
+        console.error('Error loading press mentions:', err);
+      }
+    }
+
     document.addEventListener('DOMContentLoaded', () => {
       initTheme();
       initStatsAnimation();
+      loadPress();
     });
   </script>
 

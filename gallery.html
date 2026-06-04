@@ -115,89 +115,7 @@
 
   <hr>
 
-  <h2>2025</h2>
-
-  <div class="gallery-grid">
-
-    <!-- CAFS 2025 -->
-    <div class="gallery-item" id="gallery-cafs" onclick="openLightbox(this)">
-      <div class="gallery-placeholder">
-        <div class="gallery-placeholder-icon">📸</div>
-        <div class="gallery-placeholder-label">CAFS 2025</div>
-        <div class="gallery-placeholder-sub">Canada-Africa Fintech Summit</div>
-      </div>
-      <div class="gallery-caption">
-        <span class="gallery-caption-event">Canada-Africa Fintech Summit</span>
-        <span class="gallery-caption-date">2025 · Toronto</span>
-      </div>
-    </div>
-
-    <!-- Abuja Payments Summit -->
-    <div class="gallery-item" id="gallery-abuja" onclick="openLightbox(this)">
-      <div class="gallery-placeholder">
-        <div class="gallery-placeholder-icon">📸</div>
-        <div class="gallery-placeholder-label">Abuja Summit</div>
-        <div class="gallery-placeholder-sub">West Africa Payments Summit</div>
-      </div>
-      <div class="gallery-caption">
-        <span class="gallery-caption-event">West Africa Payments Summit</span>
-        <span class="gallery-caption-date">November 2025 · Abuja</span>
-      </div>
-    </div>
-
-    <!-- Lagos Leadership Breakfast -->
-    <div class="gallery-item" id="gallery-lagos" onclick="openLightbox(this)">
-      <div class="gallery-placeholder">
-        <div class="gallery-placeholder-icon">📸</div>
-        <div class="gallery-placeholder-label">Lagos Breakfast</div>
-        <div class="gallery-placeholder-sub">Payments Leadership Breakfast</div>
-      </div>
-      <div class="gallery-caption">
-        <span class="gallery-caption-event">Payments Leadership Breakfast</span>
-        <span class="gallery-caption-date">October 2025 · Lagos</span>
-      </div>
-    </div>
-
-    <!-- Ottawa AI Summit -->
-    <div class="gallery-item" id="gallery-ottawa" onclick="openLightbox(this)">
-      <div class="gallery-placeholder">
-        <div class="gallery-placeholder-icon">📸</div>
-        <div class="gallery-placeholder-label">Ottawa AI Summit</div>
-        <div class="gallery-placeholder-sub">Responsible AI Summit — Panelist</div>
-      </div>
-      <div class="gallery-caption">
-        <span class="gallery-caption-event">Ottawa Responsible AI Summit</span>
-        <span class="gallery-caption-date">2025 · Ottawa</span>
-      </div>
-    </div>
-
-    <!-- HackWestern -->
-    <div class="gallery-item" id="gallery-hackwestern" onclick="openLightbox(this)">
-      <div class="gallery-placeholder">
-        <div class="gallery-placeholder-icon">📸</div>
-        <div class="gallery-placeholder-label">HackWestern 2025</div>
-        <div class="gallery-placeholder-sub">Mentor</div>
-      </div>
-      <div class="gallery-caption">
-        <span class="gallery-caption-event">HackWestern 2025</span>
-        <span class="gallery-caption-date">2025 · London, Ontario</span>
-      </div>
-    </div>
-
-    <!-- UofT Hack -->
-    <div class="gallery-item" id="gallery-uoft" onclick="openLightbox(this)">
-      <div class="gallery-placeholder">
-        <div class="gallery-placeholder-icon">📸</div>
-        <div class="gallery-placeholder-label">UofT Hack</div>
-        <div class="gallery-placeholder-sub">Judge</div>
-      </div>
-      <div class="gallery-caption">
-        <span class="gallery-caption-event">University of Toronto Hack</span>
-        <span class="gallery-caption-date">2025 · Toronto</span>
-      </div>
-    </div>
-
-  </div>
+  <div id="gallery-container"></div>
 
 
 
@@ -296,9 +214,81 @@
     }
     document.addEventListener('keydown', e => { if (e.key === 'Escape') closeLightbox(); });
 
+    async function loadGallery() {
+      try {
+        const response = await fetch('/content/gallery.json');
+        if (!response.ok) throw new Error('Failed to fetch gallery database');
+        const data = await response.json();
+        const container = document.getElementById('gallery-container');
+        if (!container) return;
+
+        container.innerHTML = '';
+
+        // Group items by year
+        const groups = {};
+        data.items.forEach(item => {
+          const year = item.date.match(/\d{4}/)?.[0] || 'Archive';
+          if (!groups[year]) groups[year] = [];
+          groups[year].push(item);
+        });
+
+        // Sort years descending
+        const years = Object.keys(groups).sort((a, b) => b.localeCompare(a));
+
+        years.forEach(year => {
+          // Render year header
+          const header = document.createElement('h2');
+          header.textContent = year;
+          container.appendChild(header);
+
+          // Render grid
+          const grid = document.createElement('div');
+          grid.className = 'gallery-grid';
+
+          groups[year].forEach(item => {
+            const itemEl = document.createElement('div');
+            itemEl.className = 'gallery-item';
+            itemEl.id = item.id;
+            itemEl.onclick = () => openLightbox(itemEl);
+
+            if (item.image && item.image.trim() !== '') {
+              const img = document.createElement('img');
+              img.src = item.image;
+              img.alt = item.event;
+              itemEl.appendChild(img);
+            } else {
+              const placeholder = document.createElement('div');
+              placeholder.className = 'gallery-placeholder';
+              placeholder.innerHTML = `
+                <div class="gallery-placeholder-icon">📸</div>
+                <div class="gallery-placeholder-label">${item.title}</div>
+                <div class="gallery-placeholder-sub">${item.sub}</div>
+              `;
+              itemEl.appendChild(placeholder);
+            }
+
+            const caption = document.createElement('div');
+            caption.className = 'gallery-caption';
+            caption.innerHTML = `
+              <span class="gallery-caption-event">${item.event}</span>
+              <span class="gallery-caption-date">${item.date} · ${item.location}</span>
+            `;
+            itemEl.appendChild(caption);
+
+            grid.appendChild(itemEl);
+          });
+
+          container.appendChild(grid);
+        });
+      } catch (err) {
+        console.error('Error loading gallery:', err);
+      }
+    }
+
     document.addEventListener('DOMContentLoaded', () => {
       initTheme();
       initStatsAnimation();
+      loadGallery();
     });
   </script>
 

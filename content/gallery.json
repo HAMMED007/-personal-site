@@ -1,0 +1,58 @@
+{
+  "items": [
+    {
+      "id": "gallery-cafs",
+      "event": "Canada-Africa Fintech Summit",
+      "title": "CAFS 2025",
+      "sub": "Canada-Africa Fintech Summit",
+      "date": "2025",
+      "location": "Toronto",
+      "image": ""
+    },
+    {
+      "id": "gallery-abuja",
+      "event": "West Africa Payments Summit",
+      "title": "Abuja Summit",
+      "sub": "West Africa Payments Summit",
+      "date": "November 2025",
+      "location": "Abuja",
+      "image": ""
+    },
+    {
+      "id": "gallery-lagos",
+      "event": "Payments Leadership Breakfast",
+      "title": "Lagos Breakfast",
+      "sub": "Payments Leadership Breakfast",
+      "date": "October 2025",
+      "location": "Lagos",
+      "image": ""
+    },
+    {
+      "id": "gallery-ottawa",
+      "event": "Ottawa Responsible AI Summit",
+      "title": "Ottawa AI Summit",
+      "sub": "Responsible AI Summit — Panelist",
+      "date": "2025",
+      "location": "Ottawa",
+      "image": ""
+    },
+    {
+      "id": "gallery-hackwestern",
+      "event": "HackWestern 2025",
+      "title": "HackWestern 2025",
+      "sub": "Mentor",
+      "date": "2025",
+      "location": "London, Ontario",
+      "image": ""
+    },
+    {
+      "id": "gallery-uoft",
+      "event": "University of Toronto Hack",
+      "title": "UofT Hack",
+      "sub": "Judge",
+      "date": "2025",
+      "location": "Toronto",
+      "image": ""
+    }
+  ]
+}

@@ -27,3 +27,50 @@ collections:
               - { name: "date", label: "Date (e.g. June 2026)", widget: "string" }
               - { name: "excerpt", label: "Excerpt Summary", widget: "text" }
               - { name: "body", label: "Body Content (Markdown)", widget: "markdown" }
+
+  - name: "gallery"
+    label: "Gallery"
+    files:
+      - file: "content/gallery.json"
+        name: "gallery_list"
+        label: "Gallery Items Database"
+        fields:
+          - name: "items"
+            label: "Gallery Items"
+            label_singular: "Gallery Item"
+            widget: "list"
+            summary: "{{fields.title}} ({{fields.date}})"
+            fields:
+              - { name: "id", label: "Item ID (e.g. gallery-cafs)", widget: "string" }
+              - { name: "title", label: "Title (short label)", widget: "string" }
+              - { name: "sub", label: "Subtext (description)", widget: "string" }
+              - { name: "event", label: "Event Name", widget: "string" }
+              - { name: "date", label: "Date (e.g. November 2025)", widget: "string" }
+              - { name: "location", label: "Location (e.g. Toronto)", widget: "string" }
+              - { name: "image", label: "Photo Image (Upload or select)", widget: "image", required: false }
+
+  - name: "press"
+    label: "Press & Media"
+    files:
+      - file: "content/press.json"
+        name: "press_list"
+        label: "Press Mentions Database"
+        fields:
+          - name: "forbes"
+            label: "Forbes Articles"
+            label_singular: "Forbes Article"
+            widget: "list"
+            summary: "{{fields.title}} ({{fields.source}})"
+            fields:
+              - { name: "title", label: "Title", widget: "string" }
+              - { name: "url", label: "Article URL", widget: "string" }
+              - { name: "source", label: "Source Date (e.g. Feb 2026)", widget: "string" }
+          - name: "media"
+            label: "Media Coverage"
+            label_singular: "Media Mention"
+            widget: "list"
+            summary: "{{fields.title}} ({{fields.source}})"
+            fields:
+              - { name: "title", label: "Title", widget: "string" }
+              - { name: "url", label: "Article URL", widget: "string" }
+              - { name: "source", label: "Source Publication (e.g. Techeconomy)", widget: "string" }
