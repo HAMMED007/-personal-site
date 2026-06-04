@@ -1,0 +1,29 @@
+backend:
+  name: github
+  repo: HAMMED007/-personal-site
+  branch: main
+  base_url: https://hammed.ca
+  auth_endpoint: api/auth
+
+media_folder: "assets/uploads"
+public_folder: "/assets/uploads"
+
+collections:
+  - name: "blog"
+    label: "Blog"
+    files:
+      - file: "content/blog.json"
+        name: "posts_list"
+        label: "Blog Posts Database"
+        fields:
+          - name: "posts"
+            label: "Posts"
+            label_singular: "Post"
+            widget: "list"
+            summary: "{{fields.title}} ({{fields.date}})"
+            fields:
+              - { name: "id", label: "Post ID (URL slug, e.g. payments-corridors)", widget: "string" }
+              - { name: "title", label: "Title", widget: "string" }
+              - { name: "date", label: "Date (e.g. June 2026)", widget: "string" }
+              - { name: "excerpt", label: "Excerpt Summary", widget: "text" }
+              - { name: "body", label: "Body Content (Markdown)", widget: "markdown" }

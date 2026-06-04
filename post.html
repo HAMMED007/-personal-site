@@ -86,13 +86,10 @@
         <div class="post-date" id="post-date">May 2026</div>
         <h1 class="post-title" id="post-title">Loading article...</h1>
     
-    <div class="post-body">
-      <div class="coming-soon-card">
-        <h2>Coming Soon</h2>
-        <p>This article is currently in draft status and is being prepared for publication. It will cover Hammed Afenifere's insights on compliant cross-border payment infrastructure, emerging market trade finance, and building concierge-first payment scaling solutions.</p>
-        <p>Please check back shortly or connect on LinkedIn for updates when new articles are officially published.</p>
-      </div>
-    </div>
+        <div class="post-body" id="post-body">
+          <!-- Rendered dynamically from blog.json -->
+          Loading content...
+        </div>
 
     <div class="post-footer">
       <div class="entry-actions">
@@ -237,10 +234,86 @@
       observer.observe(statRow);
     }
 
+    // Simple Markdown to HTML parser
+    function parseMarkdown(markdown) {
+      if (!markdown) return '';
+      let html = markdown;
+      
+      // Bold
+      html = html.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>');
+      // Italics
+      html = html.replace(/\*(.*?)\*/g, '<em>$1</em>');
+      // Inline code
+      html = html.replace(/`([^`]+)`/g, '<code>$1</code>');
+      // Links
+      html = html.replace(/\[([^\]]+)\]\(([^)]+)\)/g, '<a href="$2" target="_blank" rel="noopener">$1</a>');
+      
+      // Split paragraphs by double newline
+      const paragraphs = html.split(/\n\s*\n/);
+      return paragraphs.map(p => {
+        p = p.trim();
+        if (!p) return '';
+        
+        // Unordered lists
+        if (p.startsWith('- ') || p.startsWith('* ')) {
+          const items = p.split(/\n[-*]\s+/).map(item => {
+            let cleanItem = item.replace(/^[-*]\s+/, '');
+            return `<li>${cleanItem}</li>`;
+          }).join('');
+          return `<ul>${items}</ul>`;
+        }
+        
+        // Headings
+        if (p.startsWith('# ')) {
+          return `<h1>${p.substring(2)}</h1>`;
+        }
+        if (p.startsWith('## ')) {
+          return `<h2>${p.substring(3)}</h2>`;
+        }
+        if (p.startsWith('### ')) {
+          return `<h3>${p.substring(4)}</h3>`;
+        }
+        
+        // Standard paragraph
+        return `<p>${p.replace(/\n/g, '<br>')}</p>`;
+      }).join('');
+    }
+
+    // Dynamic Article loader
+    async function initArticle() {
+      const bodyContainer = document.getElementById('post-body');
+      if (!bodyContainer) return;
+      
+      try {
+        const response = await fetch('/content/blog.json');
+        const data = await response.json();
+        const posts = data.posts || [];
+        
+        const currentPost = posts.find(p => p.id === postId);
+        
+        if (currentPost && currentPost.body) {
+          bodyContainer.innerHTML = parseMarkdown(currentPost.body);
+        } else {
+          // Fallback to coming-soon card
+          bodyContainer.innerHTML = `
+            <div class="coming-soon-card">
+              <h2>Coming Soon</h2>
+              <p>This article is currently in draft status and is being prepared for publication. It will cover insights on building compliant cross-border payment infrastructure and digital corridors that connect emerging markets globally.</p>
+              <p>Please check back shortly or connect on LinkedIn for updates when new articles are officially published.</p>
+            </div>
+          `;
+        }
+      } catch (error) {
+        console.error("Failed to load article content:", error);
+        bodyContainer.innerHTML = '<p>Error loading article content.</p>';
+      }
+    }
+
     document.addEventListener('DOMContentLoaded', () => {
       initTheme();
       initLikes();
       initStatsAnimation();
+      initArticle();
     });
   </script>
 
