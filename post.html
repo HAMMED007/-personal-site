@@ -238,46 +238,91 @@
     // Simple Markdown to HTML parser
     function parseMarkdown(markdown) {
       if (!markdown) return '';
-      let html = markdown;
       
-      // Bold
-      html = html.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>');
-      // Italics
-      html = html.replace(/\*(.*?)\*/g, '<em>$1</em>');
-      // Inline code
-      html = html.replace(/`([^`]+)`/g, '<code>$1</code>');
-      // Links
-      html = html.replace(/\[([^\]]+)\]\(([^)]+)\)/g, '<a href="$2" target="_blank" rel="noopener">$1</a>');
-      
-      // Split paragraphs by double newline
-      const paragraphs = html.split(/\n\s*\n/);
-      return paragraphs.map(p => {
-        p = p.trim();
-        if (!p) return '';
-        
-        // Unordered lists
-        if (p.startsWith('- ') || p.startsWith('* ')) {
-          const items = p.split(/\n[-*]\s+/).map(item => {
-            let cleanItem = item.replace(/^[-*]\s+/, '');
-            return `<li>${cleanItem}</li>`;
-          }).join('');
-          return `<ul>${items}</ul>`;
+      // Inline replacements: Bold, Italics, Code, Links
+      let html = markdown
+        .replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')
+        .replace(/\*(.*?)\*/g, '<em>$1</em>')
+        .replace(/`([^`]+)`/g, '<code>$1</code>')
+        .replace(/\[([^\]]+)\]\(([^)]+)\)/g, '<a href="$2" target="_blank" rel="noopener">$1</a>');
+
+      const lines = html.split('\n');
+      let result = [];
+      let currentParagraph = [];
+      let inList = false;
+
+      function closeParagraph() {
+        if (currentParagraph.length > 0) {
+          result.push(`<p>${currentParagraph.join(' ')}</p>`);
+          currentParagraph = [];
         }
+      }
+
+      function closeList() {
+        if (inList) {
+          result.push('</ul>');
+          inList = false;
+        }
+      }
+
+      for (let i = 0; i < lines.length; i++) {
+        let line = lines[i].trim();
         
+        // Horizontal rule
+        if (line === '---' || line === '***') {
+          closeParagraph();
+          closeList();
+          result.push('<hr>');
+          continue;
+        }
+
         // Headings
-        if (p.startsWith('# ')) {
-          return `<h1>${p.substring(2)}</h1>`;
+        if (line.startsWith('# ')) {
+          closeParagraph();
+          closeList();
+          result.push(`<h1>${line.substring(2)}</h1>`);
+          continue;
         }
-        if (p.startsWith('## ')) {
-          return `<h2>${p.substring(3)}</h2>`;
+        if (line.startsWith('## ')) {
+          closeParagraph();
+          closeList();
+          result.push(`<h2>${line.substring(3)}</h2>`);
+          continue;
         }
-        if (p.startsWith('### ')) {
-          return `<h3>${p.substring(4)}</h3>`;
+        if (line.startsWith('### ')) {
+          closeParagraph();
+          closeList();
+          result.push(`<h3>${line.substring(4)}</h3>`);
+          continue;
         }
-        
-        // Standard paragraph
-        return `<p>${p.replace(/\n/g, '<br>')}</p>`;
-      }).join('');
+
+        // Lists
+        if (line.startsWith('- ') || line.startsWith('* ')) {
+          closeParagraph();
+          if (!inList) {
+            result.push('<ul>');
+            inList = true;
+          }
+          result.push(`<li>${line.substring(2)}</li>`);
+          continue;
+        }
+
+        // Empty line splits paragraphs
+        if (line === '') {
+          closeParagraph();
+          closeList();
+          continue;
+        }
+
+        // Normal text line
+        closeList();
+        currentParagraph.push(line);
+      }
+
+      closeParagraph();
+      closeList();
+
+      return result.join('\n');
     }
 
     // Dynamic Article loader
