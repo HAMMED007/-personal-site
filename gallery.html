@@ -156,44 +156,7 @@
       });
     }
 
-    // Stats counter animation
-    function animateStats() {
-      const stats = document.querySelectorAll('.stat-number[data-target]');
-      stats.forEach(stat => {
-        const target = parseInt(stat.getAttribute('data-target'), 10);
-        const suffix = stat.getAttribute('data-suffix') || '';
-        const prefix = stat.textContent.startsWith('$') ? '$' : '';
-        let current = 0;
-        const duration = 1500; // 1.5s
-        const increment = target > 50 ? Math.ceil(target / 50) : 1;
-        const intervalTime = Math.max(10, Math.floor(duration / (target / increment)));
-        
-        const timer = setInterval(() => {
-          current += increment;
-          if (current >= target) {
-            current = target;
-            clearInterval(timer);
-          }
-          stat.textContent = `${prefix}${current}${suffix}`;
-        }, intervalTime);
-      });
-    }
-
-    function initStatsAnimation() {
-      const statRow = document.querySelector('.stat-row');
-      if (!statRow) return;
-      
-      const observer = new IntersectionObserver((entries, observer) => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) {
-            animateStats();
-            observer.unobserve(entry.target);
-          }
-        });
-      }, { threshold: 0.2 });
-      
-      observer.observe(statRow);
-    }
+    
 
     function openLightbox(el) {
       const img = el.querySelector('img');
@@ -287,7 +250,7 @@
 
     document.addEventListener('DOMContentLoaded', () => {
       initTheme();
-      initStatsAnimation();
+      
       loadGallery();
     });
   </script>
