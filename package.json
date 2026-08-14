@@ -1,0 +1,13 @@
+{
+  "name": "personal-site",
+  "version": "1.0.0",
+  "description": "Hammed Afenifere Personal Portfolio Site",
+  "main": "generate-posts.js",
+  "scripts": {
+    "build": "node generate-posts.js"
+  },
+  "dependencies": {},
+  "engines": {
+    "node": ">=18"
+  }
+}

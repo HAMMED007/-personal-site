@@ -22,7 +22,7 @@
 
   <!-- Open Graph -->
   <meta property="og:type" content="website">
-  <meta property="og:title" content="Hammed Afenifere — Fintech Founder">
+  <meta property="og:title" content="Hammed Afenifere - Fintech Founder">
   <meta property="og:description" content="CEO & Co-Founder of Spark Tech Hub. Building payment infrastructure for emerging markets through Oneremit and Payremit.">
   <meta property="og:url" content="https://www.hammed.ca/">
   <meta property="og:site_name" content="Hammed Afenifere">
@@ -30,7 +30,7 @@
 
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Hammed Afenifere — Fintech Founder">
+  <meta name="twitter:title" content="Hammed Afenifere - Fintech Founder">
   <meta name="twitter:description" content="CEO & Co-Founder of Spark Tech Hub. Building payment infrastructure for emerging markets.">
   <meta name="twitter:image" content="https://www.hammed.ca/og-image.jpg">
 
@@ -40,8 +40,9 @@
     "@context": "https://schema.org",
     "@type": "Person",
     "name": "Hammed Afenifere",
-    "alternateName": "Afenifere Hammed Adewumi",
+    "alternateName": ["Afenifere Hammed Adewumi", "Hammed Adewumi Afenifere"],
     "url": "https://www.hammed.ca",
+    "image": "https://s3.amazonaws.com/cco-avatars/91acd1dc-1a3b-40e7-b0a4-964e12e3f699.png",
     "jobTitle": "CEO & Co-Founder",
     "worksFor": [
       {
@@ -55,6 +56,14 @@
         "url": "https://www.sparktechs.ca"
       }
     ],
+    "hasOccupation": {
+      "@type": "Occupation",
+      "name": "Fintech Founder & Executive"
+    },
+    "address": {
+      "@type": "PostalAddress",
+      "addressCountry": "Canada"
+    },
     "description": "Fintech founder building compliant cross-border payment infrastructure for emerging markets across 5 countries.",
     "knowsAbout": ["Cross-border payments", "Fintech", "Regulatory compliance", "Emerging markets", "Trade finance", "Payment infrastructure", "Oneremit", "Payremit"],
     "sameAs": [
@@ -252,9 +261,7 @@
           const entryDiv = document.createElement('div');
           entryDiv.className = 'entry compact';
           
-          const urlEncodedTitle = encodeURIComponent(post.title);
-          const urlEncodedDate = encodeURIComponent(post.date);
-          const postLink = `post.html?id=${post.id}&title=${urlEncodedTitle}&date=${urlEncodedDate}`;
+          const postLink = `/posts/${post.id}.html`;
           
           entryDiv.innerHTML = `
             <div class="entry-date">${post.date}</div>

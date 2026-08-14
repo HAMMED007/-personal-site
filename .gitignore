@@ -6,3 +6,7 @@ desktop.ini
 # IDE settings
 .vscode/
 .idea/
+
+# Built assets (SSG)
+/posts/
+/sitemap.xml

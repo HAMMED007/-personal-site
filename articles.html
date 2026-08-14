@@ -315,9 +315,7 @@
           entryDiv.className = 'entry compact';
           entryDiv.setAttribute('data-post-id', post.id);
           
-          const urlEncodedTitle = encodeURIComponent(post.title);
-          const urlEncodedDate = encodeURIComponent(post.date);
-          const postLink = `post.html?id=${post.id}&title=${urlEncodedTitle}&date=${urlEncodedDate}`;
+          const postLink = `/posts/${post.id}.html`;
           
           entryDiv.innerHTML = `
             <div class="entry-date">${post.date}</div>

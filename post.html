@@ -13,25 +13,21 @@
     }
   </script>
 
-  <!-- Primary SEO -->
-  <title id="meta-title">Blog - Hammed Afenifere</title>
-  <meta name="description" content="Read Hammed Afenifere's articles on cross-border payments, emerging market trade infrastructure, and compliant fintech expansion.">
-  <meta name="author" content="Hammed Afenifere">
-  <meta name="robots" content="index, follow">
+  <!-- SEO_METADATA_PLACEHOLDER -->
 
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="/style.css">
   <link rel="icon" type="image/png" href="/favicon.png">
 </head>
 <body class="split-page">
 
   <nav>
-    <a href="index.html">home</a>
-    <a href="about.html">about</a>
-    <a href="articles.html" class="active">blog</a>
-    <a href="conferences.html">conferences</a>
-    <a href="gallery.html">gallery</a>
-    <a href="press.html">press &amp; media</a>
-    <a href="contact.html">contact</a>
+    <a href="/index.html">home</a>
+    <a href="/about.html">about</a>
+    <a href="/articles.html" class="active">blog</a>
+    <a href="/conferences.html">conferences</a>
+    <a href="/gallery.html">gallery</a>
+    <a href="/press.html">press &amp; media</a>
+    <a href="/contact.html">contact</a>
     <button id="theme-toggle" class="theme-toggle-btn" aria-label="Toggle theme">
       <svg class="sun-icon" viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
         <circle cx="12" cy="12" r="5"></circle>
@@ -80,7 +76,7 @@
 
     <main class="main-content">
       <div class="back-link">
-        <a href="articles.html">← Back to blog</a>
+        <a href="/articles.html">← Back to blog</a>
       </div>
 
       <article class="blog-post">
@@ -119,15 +115,18 @@
   </footer>
 
   <script>
-    // URL parameter parsing
-    const urlParams = new URLSearchParams(window.location.search);
-    const postId = urlParams.get('id') || 'generic';
-    const postTitle = urlParams.get('title') || 'Article Coming Soon';
-    const postDate = urlParams.get('date') || '2026';
-
-    document.getElementById('post-title').textContent = postTitle;
-    document.getElementById('post-date').textContent = postDate;
-    document.getElementById('meta-title').textContent = `${postTitle} — Hammed Afenifere`;
+    /* STATIC_POST_ID_PLACEHOLDER */
+    if (typeof postId === 'undefined') {
+      const urlParams = new URLSearchParams(window.location.search);
+      window.postId = urlParams.get('id') || 'generic';
+      const postTitle = urlParams.get('title') || 'Article Coming Soon';
+      const postDate = urlParams.get('date') || '2026';
+      
+      const titleEl = document.getElementById('post-title');
+      const dateEl = document.getElementById('post-date');
+      if (titleEl) titleEl.textContent = postTitle;
+      if (dateEl) dateEl.textContent = postDate;
+    }
 
     // Theme toggle logic
     function initTheme() {
