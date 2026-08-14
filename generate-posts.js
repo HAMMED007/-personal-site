@@ -1,6 +1,34 @@
 const fs = require('fs');
 const path = require('path');
 
+// Recursive helper functions to copy files and directories
+function copyFileSync(source, target) {
+  let targetFile = target;
+  if (fs.existsSync(target) && fs.lstatSync(target).isDirectory()) {
+    targetFile = path.join(target, path.basename(source));
+  }
+  fs.writeFileSync(targetFile, fs.readFileSync(source));
+}
+
+function copyFolderRecursiveSync(source, target) {
+  const targetFolder = path.join(target, path.basename(source));
+  if (!fs.existsSync(targetFolder)) {
+    fs.mkdirSync(targetFolder, { recursive: true });
+  }
+
+  if (fs.lstatSync(source).isDirectory()) {
+    const files = fs.readdirSync(source);
+    files.forEach(file => {
+      const curSource = path.join(source, file);
+      if (fs.lstatSync(curSource).isDirectory()) {
+        copyFolderRecursiveSync(curSource, targetFolder);
+      } else {
+        copyFileSync(curSource, targetFolder);
+      }
+    });
+  }
+}
+
 // Simple Markdown to HTML parser
 function parseMarkdown(markdown) {
   if (!markdown) return '';
@@ -109,24 +137,65 @@ function getPublishDateISO(dateStr) {
 }
 
 function generate() {
-  const blogJsonPath = path.join(__dirname, 'content', 'blog.json');
-  const templatePath = path.join(__dirname, 'post.html');
-  const postsDir = path.join(__dirname, 'posts');
+  const distDir = path.join(__dirname, 'dist');
+  
+  // 1. Clean and create output directory (dist)
+  if (fs.existsSync(distDir)) {
+    fs.rmSync(distDir, { recursive: true, force: true });
+  }
+  fs.mkdirSync(distDir, { recursive: true });
 
-  // Check files exist
+  console.log("Preparing build artifacts in dist/...");
+
+  // 2. Copy static files to dist
+  const staticFiles = [
+    'index.html',
+    'about.html',
+    'articles.html',
+    'conferences.html',
+    'contact.html',
+    'gallery.html',
+    'press.html',
+    'post.html', // Raw template page preserved
+    'style.css',
+    'robots.txt',
+    'favicon.png',
+    'og-image.jpg'
+  ];
+
+  staticFiles.forEach(file => {
+    const srcPath = path.join(__dirname, file);
+    if (fs.existsSync(srcPath)) {
+      copyFileSync(srcPath, distDir);
+    }
+  });
+
+  // 3. Copy directories to dist
+  const staticDirs = ['admin', 'content'];
+  staticDirs.forEach(dir => {
+    const srcPath = path.join(__dirname, dir);
+    if (fs.existsSync(srcPath)) {
+      // Note: copyFolderRecursiveSync copies the directory inside the target dir, so it creates dist/admin and dist/content
+      copyFolderRecursiveSync(srcPath, distDir);
+    }
+  });
+
+  // Paths relative to dist for post generation
+  const blogJsonPath = path.join(distDir, 'content', 'blog.json');
+  const templatePath = path.join(distDir, 'post.html');
+  const postsDir = path.join(distDir, 'posts');
+
   if (!fs.existsSync(blogJsonPath)) {
-    console.error("Error: content/blog.json not found.");
+    console.error("Error: dist/content/blog.json not found.");
     process.exit(1);
   }
   if (!fs.existsSync(templatePath)) {
-    console.error("Error: post.html template not found.");
+    console.error("Error: dist/post.html template not found.");
     process.exit(1);
   }
 
-  // Create posts directory if it doesn't exist
-  if (!fs.existsSync(postsDir)) {
-    fs.mkdirSync(postsDir, { recursive: true });
-  }
+  // Create dist/posts directory
+  fs.mkdirSync(postsDir, { recursive: true });
 
   // Read blog database
   const blogData = JSON.parse(fs.readFileSync(blogJsonPath, 'utf8'));
@@ -135,7 +204,7 @@ function generate() {
   // Read template HTML
   const templateHtml = fs.readFileSync(templatePath, 'utf8');
 
-  console.log(`Generating ${posts.length} static blog posts...`);
+  console.log(`Generating ${posts.length} static blog posts in dist/posts/ ...`);
 
   posts.forEach(post => {
     const compiledBody = parseMarkdown(post.body);
@@ -190,41 +259,34 @@ function generate() {
 
     // Process substitutions in template content
     let postHtml = templateHtml;
-    
-    // Replace SEO placeholder
     postHtml = postHtml.replace('<!-- SEO_METADATA_PLACEHOLDER -->', seoMeta);
     
-    // Replace Date
     postHtml = postHtml.replace(
       /<div class="post-date" id="post-date">.*?<\/div>/,
       `<div class="post-date" id="post-date">${post.date}</div>`
     );
 
-    // Replace Title
     postHtml = postHtml.replace(
       /<h1 class="post-title" id="post-title">.*?<\/h1>/,
       `<h1 class="post-title" id="post-title">${post.title}</h1>`
     );
 
-    // Replace Body
     postHtml = postHtml.replace(
       /<div class="post-body" id="post-body">[\s\S]*?<\/div>/,
       `<div class="post-body" id="post-body">\n          ${compiledBody}\n        </div>`
     );
 
-    // Replace static ID placeholder in script
     postHtml = postHtml.replace(
       '/* STATIC_POST_ID_PLACEHOLDER */',
       `const postId = "${post.id}";`
     );
 
-    // Save output file
+    // Save output file inside dist/posts/
     const outputPath = path.join(postsDir, `${post.id}.html`);
     fs.writeFileSync(outputPath, postHtml, 'utf8');
-    console.log(`Generated: posts/${post.id}.html`);
   });
 
-  // Generate sitemap.xml dynamically
+  // 4. Generate dist/sitemap.xml dynamically
   const todayStr = new Date().toISOString().split('T')[0];
   const sitemapHeader = `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">`;
@@ -242,7 +304,6 @@ function generate() {
 
   let sitemapBody = '';
   
-  // Add core static files
   coreUrls.forEach(url => {
     sitemapBody += `
   <url>
@@ -253,7 +314,6 @@ function generate() {
   </url>`;
   });
 
-  // Add individual dynamic blog posts to sitemap
   posts.forEach(post => {
     const postLoc = `https://www.hammed.ca/posts/${post.id}.html`;
     const postDate = getPublishDateISO(post.date);
@@ -267,8 +327,8 @@ function generate() {
   });
 
   const fullSitemap = sitemapHeader + sitemapBody + '\n' + sitemapFooter;
-  fs.writeFileSync(path.join(__dirname, 'sitemap.xml'), fullSitemap, 'utf8');
-  console.log("Dynamically generated sitemap.xml containing all core pages and dynamic posts.");
+  fs.writeFileSync(path.join(distDir, 'sitemap.xml'), fullSitemap, 'utf8');
+  console.log("Successfully compiled all assets and generated sitemap.xml in dist/.");
 }
 
 generate();
