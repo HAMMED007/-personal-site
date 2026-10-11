@@ -4,7 +4,8 @@
   "description": "Hammed Afenifere Personal Portfolio Site",
   "main": "generate-posts.js",
   "scripts": {
-    "build": "node generate-posts.js"
+    "build": "node generate-posts.js",
+    "test": "npm run build && node test-site.js"
   },
   "dependencies": {},
   "engines": {

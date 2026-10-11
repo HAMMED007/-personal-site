@@ -1,30 +1,152 @@
 {
   "forbes": [
     {
-      "title": "Why Digital Payments Could Become Key Business Infrastructure, Not Just A Financial Experiment",
-      "url": "https://www.forbes.com/councils/forbesbusinesscouncil/2026/02/05/why-digital-payments-could-become-key-business-infrastructure-not-just-a-financial-experiment/",
-      "source": "Feb 2026"
+      "title": "Speed And Security: What The Global Payments Conversation Is Missing",
+      "url": "https://www.forbes.com/councils/forbesbusinesscouncil/2026/09/28/speed-and-security-what-the-global-payments-conversation-is-missing/",
+      "source": "Sep 2026",
+      "date": "2026-09-28",
+      "format": "Authored article"
+    },
+    {
+      "title": "Why Stablecoins Could Become Key Business Infrastructure, Not Just A Financial Experiment",
+      "url": "https://www.forbes.com/councils/forbesbusinesscouncil/2026/02/05/why-stablecoins-could-become-key-business-infrastructure-not-just-a-financial-experiment/",
+      "source": "Feb 2026",
+      "date": "2026-02-05",
+      "format": "Authored article"
     },
     {
       "title": "How Fintech Leaders Can Balance Expansion, Compliance And Culture",
       "url": "https://www.forbes.com/councils/forbesbusinesscouncil/2026/01/27/how-fintech-leaders-can-balance-expansion-compliance-and-culture/",
-      "source": "Jan 2026"
+      "source": "Jan 2026",
+      "date": "2026-01-27",
+      "format": "Expert panel"
     },
     {
       "title": "Emerging Markets As A Frontier For Global Payments Technology",
       "url": "https://www.forbes.com/councils/forbesbusinesscouncil/2025/12/09/emerging-markets-as-a-frontier-for-global-payments-technology/",
-      "source": "Dec 2025"
+      "source": "Dec 2025",
+      "date": "2025-12-09",
+      "format": "Authored article"
     },
     {
       "title": "20 Jobs And Roles Humans Do Better Than AI",
       "url": "https://www.forbes.com/councils/forbesbusinesscouncil/2025/11/13/20-jobs-and-roles-humans-do-better-than-ai/",
-      "source": "Nov 2025"
+      "source": "Nov 2025",
+      "date": "2025-11-13",
+      "format": "Expert panel"
     }
   ],
   "media": [
     {
-      "title": "Digitizing the Dollar: The Rise of Modern B2B Payments in Emerging Markets",
-      "url": "https://techeconomy.ng/digitizing-the-dollar-the-rise-of-modern-in-african-b2b-payments/",
+      "title": "From Lagos to Toronto: How Oneremit Is Making Business Payments to Canada Feel Local",
+      "url": "https://www.bellanaija.com/2026/10/oneremit-nigeria-canada/",
+      "source": "BellaNaija",
+      "date": "2026-10-08",
+      "format": "Sponsored content"
+    },
+    {
+      "title": "Oneremit expands cross-border payments operations, secures approvals",
+      "url": "https://trustradio.com.ng/en/oneremit-expands-cross-border-payments-operations-secures-approvals",
+      "source": "Trust Radio",
+      "date": "2026-10-02"
+    },
+    {
+      "title": "Oneremit leverages banking, fintech partnerships to scale African trade payments",
+      "url": "https://guardian.ng/news/oneremit-leverages-banking-fintech-partnerships-to-scale-african-trade-payments/",
+      "source": "The Guardian Nigeria",
+      "date": "2026-10-01"
+    },
+    {
+      "title": "Building the regulated backbone: why Oneremit is Making Compliance Its Competitive Advantage",
+      "url": "https://businesspost.ng/technology/building-the-regulated-backbone-why-oneremit-is-making-compliance-its-competitive-advantage/",
+      "source": "Business Post",
+      "date": "2026-09-25",
+      "format": "Contributor article"
+    },
+    {
+      "title": "Hammed Afenifere on the Local Context AI Compliance Can Miss",
+      "url": "https://hackernoon.com/hammed-afenifere-on-the-local-context-ai-compliance-can-miss",
+      "source": "HackerNoon",
+      "date": "2026-09-21",
+      "format": "Business Blogging release"
+    },
+    {
+      "title": "Oneremit Building Cross-Border Payments Around Trust, Compliance – Hammed Afenifere",
+      "url": "https://newtelegraphng.com/oneremit-building-cross-border-payments-around-trust-compliance-hammed-afenifere/",
+      "source": "New Telegraph",
+      "date": "2026-09-17"
+    },
+    {
+      "title": "Oneremit scales regulatory infrastructure across North America and Africa to support cross-border enterprise trade",
+      "url": "https://nairametrics.com/2026/09/17/oneremit-scales-regulatory-infrastructure-across-north-america-and-africa-to-support-cross-border-enterprise-trade/",
+      "source": "Nairametrics",
+      "date": "2026-09-17",
+      "format": "Partner content"
+    },
+    {
+      "title": "We’re redefining success in African cross-border settlement – Oneremit",
+      "url": "https://www.vanguardngr.com/2026/09/were-redefining-success-in-african-cross-border-settlement-oneremit/",
+      "source": "Vanguard",
+      "date": "2026-09-14"
+    },
+    {
+      "title": "Beyond the Ledger: How Settlement Speed Built Oneremit’s $200M Brand Benchmark",
+      "url": "https://www.brandessencenigeria.com/beyond-the-ledger-how-settlement-speed-built-oneremits-200m-brand-benchmark/",
+      "source": "Brandessence Nigeria",
+      "date": "2026-09-09"
+    },
+    {
+      "title": "Oneremit Crosses $200M as African businesses move more money across borders",
+      "url": "https://thecondia.com/partners/oneremit-crosses-200m-african-cross-border-payments/",
+      "source": "The Condia",
+      "date": "2026-09-09",
+      "format": "Partner content"
+    },
+    {
+      "title": "African firms lose billions to costly cross-border payments",
+      "url": "https://punchng.com/african-firms-lose-billions-to-costly-cross-border-payments/",
+      "source": "PUNCH",
+      "date": "2026-09-07"
+    },
+    {
+      "title": "Oneremit secures licences in US, Canada, Nigeria to ease cross-border payments",
+      "url": "https://medtechinsider.ng/2026/09/03/oneremit-secures-licences-in-us-canada-nigeria-to-ease-cross-border-payments/",
+      "source": "MedTech Insider",
+      "date": "2026-09-03"
+    },
+    {
+      "title": "Africa’s Businesses Are Going Global. Oneremit Is Helping Them Move Faster",
+      "url": "https://thecondia.com/partners/oneremit-cross-border-payments-african-businesses/",
+      "source": "The Condia",
+      "date": "2026-08-11",
+      "format": "Partner content"
+    },
+    {
+      "title": "The Founder connecting Africa’s underserved to the Global Economy",
+      "url": "https://www.thesouthafrican.com/business/the-founder-connecting-africas-underserved-to-the-global-economy/",
+      "source": "The South African",
+      "date": "2026-01-22"
+    },
+    {
+      "title": "Meet the 10 startup founders building Africa’s emerging payment tech solutions",
+      "url": "https://thecondia.com/founders-building-emerging-tech-africa/",
+      "source": "The Condia",
+      "date": "2026-01-12"
+    },
+    {
+      "title": "Hammed Afenifere on Building Africa’s Next Fintech Powerhouse",
+      "url": "https://gritdaily.com/hammed-afenifere-africas-next-fintech-powerhouse/",
+      "source": "Grit Daily",
+      "date": "2025-12-02"
+    },
+    {
+      "title": "Oneremit expands cross-border payments operations, secures approvals",
+      "url": "https://dailytrust.com/oneremit-expands-cross-border-payments-operations-secures-approvals/",
+      "source": "Daily Trust"
+    },
+    {
+      "title": "Digitizing the Dollar: The Rise of Stablecoins in African B2B Payments",
+      "url": "https://techeconomy.ng/digitizing-the-dollar-the-rise-of-stablecoins-in-african-b2b-payments/",
       "source": "Techeconomy"
     },
     {

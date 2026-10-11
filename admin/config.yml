@@ -65,6 +65,8 @@ collections:
               - { name: "title", label: "Title", widget: "string" }
               - { name: "url", label: "Article URL", widget: "string" }
               - { name: "source", label: "Source Date (e.g. Feb 2026)", widget: "string" }
+              - { name: "date", label: "Publication date (YYYY-MM-DD)", widget: "string", required: false, pattern: ['^\d{4}-\d{2}-\d{2}$', 'Use YYYY-MM-DD'] }
+              - { name: "format", label: "Article type (e.g. Authored article, Expert panel)", widget: "string", required: false }
           - name: "media"
             label: "Media Coverage"
             label_singular: "Media Mention"
@@ -74,3 +76,5 @@ collections:
               - { name: "title", label: "Title", widget: "string" }
               - { name: "url", label: "Article URL", widget: "string" }
               - { name: "source", label: "Source Publication (e.g. Techeconomy)", widget: "string" }
+              - { name: "date", label: "Publication date (YYYY-MM-DD)", widget: "string", required: false, pattern: ['^\d{4}-\d{2}-\d{2}$', 'Use YYYY-MM-DD'] }
+              - { name: "format", label: "Publication label (e.g. Sponsored content, Partner content)", widget: "string", required: false }

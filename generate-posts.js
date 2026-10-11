@@ -1,5 +1,6 @@
 const fs = require('fs');
 const path = require('path');
+const { renderPressAssets } = require('./render-press');
 
 // Recursive helper functions to copy files and directories
 function copyFileSync(source, target) {
@@ -138,6 +139,10 @@ function getPublishDateISO(dateStr) {
 
 function generate() {
   const distDir = path.join(__dirname, 'dist');
+  if (path.resolve(distDir) !== path.resolve(__dirname, 'dist') ||
+      (fs.existsSync(distDir) && fs.lstatSync(distDir).isSymbolicLink())) {
+    throw new Error('Refusing to clean an unexpected build directory.');
+  }
   
   // 1. Clean and create output directory (dist)
   if (fs.existsSync(distDir)) {
@@ -179,6 +184,9 @@ function generate() {
       copyFolderRecursiveSync(srcPath, distDir);
     }
   });
+
+  // Publish the CMS press database as real HTML, without a client-side fetch.
+  renderPressAssets(distDir);
 
   // Paths relative to dist for post generation
   const blogJsonPath = path.join(distDir, 'content', 'blog.json');

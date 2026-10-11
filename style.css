@@ -268,6 +268,49 @@ hr {
 .list-item a { font-weight: 400; color: var(--ink); }
 
 /* ─── Tag pill ───────────────────────────── */
+.press-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.press-item {
+  border-bottom: 1px solid var(--border);
+  padding: 16px 0;
+}
+.press-item:first-child { padding-top: 0; }
+.press-item:last-child { border-bottom: 0; }
+.press-title {
+  display: block;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 1.6;
+  overflow-wrap: anywhere;
+}
+.press-meta {
+  display: block;
+  margin-top: 5px;
+  font-size: 11px;
+  line-height: 1.6;
+  color: var(--ink-muted);
+}
+.press-more { margin-top: 18px; }
+.press-more summary {
+  cursor: pointer;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--ink);
+  padding: 10px 0;
+}
+.press-more[open] summary { margin-bottom: 14px; }
+.section-intro { font-size: 13px; }
+.event-links { font-size: 12px; margin: 12px 0 0; }
+.main-content { min-width: 0; }
+.press-title:focus-visible, .press-more summary:focus-visible {
+  outline: 2px solid var(--ink);
+  outline-offset: 4px;
+}
+html.dark .tag { background: #222; color: #bbb; }
+
 .tag {
   display: inline-block;
   font-size: 10px;
