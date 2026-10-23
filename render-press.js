@@ -9,7 +9,9 @@ function escapeHtml(value) {
 
 function prepareEntries(data) {
   const seen = new Set();
-  return ['forbes', 'media'].flatMap(group => {
+  return ['forbes', 'media', 'partners'].flatMap(group => {
+    // Older CMS records may predate the optional partner-feature collection.
+    if (group === 'partners' && data[group] === undefined) return [];
     if (!Array.isArray(data[group])) throw new Error(`Missing press group: ${group}`);
     return data[group].map(item => {
       if (!item.title || !item.source) throw new Error('Press entries need a title and source.');
@@ -21,7 +23,7 @@ function prepareEntries(data) {
           Number.isNaN(Date.parse(item.date)) || new Date(item.date).toISOString().slice(0, 10) !== item.date)) {
         throw new Error(`Invalid publication date: ${item.date}`);
       }
-      return { ...item, group, publisher: group === 'forbes' ? 'Forbes Business Council' : item.source };
+      return { ...item, group, publisher: item.publisher || (group === 'forbes' ? 'Forbes Business Council' : item.source) };
     });
   }).sort((a, b) => (b.date || '').localeCompare(a.date || ''));
 }
@@ -40,9 +42,9 @@ function collectionSchema(entries) {
   return {
     '@context': 'https://schema.org',
     '@type': 'CollectionPage',
-    name: 'Press, Media & Commentary - Hammed Afenifere',
+    name: 'Press, Media & Partner Features - Hammed Afenifere',
     url: 'https://www.hammed.ca/press.html',
-    description: 'Coverage of Hammed Afenifere and Oneremit, with published articles and expert commentary.',
+    description: 'Coverage of Hammed Afenifere and Oneremit, with published articles, expert commentary and partner features.',
     about: {
       '@type': 'Person', name: 'Hammed Afenifere', url: 'https://www.hammed.ca/',
       alternateName: ['Afenifere Hammed Adewumi', 'Hammed Adewumi Afenifere'],
@@ -52,7 +54,7 @@ function collectionSchema(entries) {
       ]
     },
     hasPart: entries.map(item => ({
-      '@type': 'Article', name: item.title, url: item.url,
+      '@type': item.group === 'partners' ? 'WebPage' : 'Article', name: item.title, url: item.url,
       publisher: { '@type': 'Organization', name: item.publisher },
       ...(item.date ? { datePublished: item.date } : {}),
       ...(item.group === 'forbes' && item.format === 'Authored article'
@@ -72,16 +74,20 @@ function renderPressAssets(distDir) {
   const entries = prepareEntries(data);
   const homePath = path.join(distDir, 'index.html');
   let home = fs.readFileSync(homePath, 'utf8');
-  const older = entries.slice(6);
-  const homeList = renderList(entries.slice(0, 6)) + (older.length
+  const coverage = entries.filter(item => item.group !== 'partners');
+  const partners = entries.filter(item => item.group === 'partners');
+  const older = coverage.slice(6);
+  const homeList = renderList(coverage.slice(0, 6)) + (older.length
     ? `\n<details class="press-more"><summary>More press &amp; commentary (${older.length})</summary>\n${renderList(older)}\n</details>` : '');
   home = replaceRequired(home, '<!-- PRESS_HOME -->', homeList);
+  home = replaceRequired(home, '<!-- PRESS_HOME_PARTNERS -->', renderList(partners));
   fs.writeFileSync(homePath, home, 'utf8');
 
   const pressPath = path.join(distDir, 'press.html');
   let press = fs.readFileSync(pressPath, 'utf8');
   press = replaceRequired(press, '<!-- PRESS_FORBES -->', renderList(entries.filter(item => item.group === 'forbes')));
   press = replaceRequired(press, '<!-- PRESS_MEDIA -->', renderList(entries.filter(item => item.group === 'media')));
+  press = replaceRequired(press, '<!-- PRESS_PARTNERS -->', renderList(partners));
   const schema = JSON.stringify(collectionSchema(entries), null, 2).replace(/</g, '\\u003c');
   press = replaceRequired(press, '<!-- PRESS_SCHEMA -->', `<script type="application/ld+json">\n${schema}\n</script>`);
   fs.writeFileSync(pressPath, press, 'utf8');

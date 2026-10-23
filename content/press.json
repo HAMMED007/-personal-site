@@ -8,11 +8,27 @@
       "format": "Authored article"
     },
     {
+      "title": "Why Stablecoins Could Become Key Business Infrastructure, Not Just A Financial Experiment (Japanese edition)",
+      "url": "https://forbesjapan.com/articles/detail/91724",
+      "source": "Feb 2026",
+      "publisher": "Forbes Japan",
+      "date": "2026-02-14",
+      "format": "Authored article"
+    },
+    {
       "title": "Why Stablecoins Could Become Key Business Infrastructure, Not Just A Financial Experiment",
       "url": "https://www.forbes.com/councils/forbesbusinesscouncil/2026/02/05/why-stablecoins-could-become-key-business-infrastructure-not-just-a-financial-experiment/",
       "source": "Feb 2026",
       "date": "2026-02-05",
       "format": "Authored article"
+    },
+    {
+      "title": "How Fintech Leaders Can Balance Expansion, Compliance And Culture (Japanese edition)",
+      "url": "https://forbesjapan.com/articles/detail/90945",
+      "source": "Feb 2026",
+      "publisher": "Forbes Japan",
+      "date": "2026-02-02",
+      "format": "Expert panel"
     },
     {
       "title": "How Fintech Leaders Can Balance Expansion, Compliance And Culture",
@@ -38,11 +54,48 @@
   ],
   "media": [
     {
+      "title": "How Oneremit manages cross-border complexity behind the scenes – Hammed Afenifere",
+      "url": "https://businessday.ng/briefs/article/how-oneremit-manages-cross-border-complexity-behind-the-scenes-hammed-afenifere/",
+      "source": "BusinessDay",
+      "date": "2026-10-15"
+    },
+    {
+      "title": "Compliance, reliability essential to cross-border payment – Hammed Afenifere",
+      "url": "https://thesun.ng/compliance-reliability-essential-to-cross-border-payment-hammed-afenifere/",
+      "source": "The Sun Nigeria",
+      "date": "2026-10-15"
+    },
+    {
+      "title": "Our Job Helps Businesses Focus On Achieving Their Goals – Oneremit",
+      "url": "https://independent.ng/our-job-helps-businesses-focus-on-achieving-their-goals-oneremit/",
+      "source": "Independent Nigeria",
+      "date": "2026-10-10"
+    },
+    {
+      "title": "Stablecoins as a settlement layer: Darren Wang on cross-border payments",
+      "url": "https://thepaypers.com/crypto-web3-and-cbdc/interviews/stablecoins-as-a-settlement-layer-darren-wang-on-cross-border-payments",
+      "source": "The Paypers",
+      "date": "2026-10-09",
+      "format": "Interview with OwlTing CEO featuring Oneremit"
+    },
+    {
       "title": "From Lagos to Toronto: How Oneremit Is Making Business Payments to Canada Feel Local",
       "url": "https://www.bellanaija.com/2026/10/oneremit-nigeria-canada/",
       "source": "BellaNaija",
       "date": "2026-10-08",
       "format": "Sponsored content"
+    },
+    {
+      "title": "Nigeria's Oneremit Adds Stablecoin Payments for Faster Cross-Border Transfers",
+      "url": "https://www.wearetech.africa/en/fils-uk/brief/brief-simple/nigerias-oneremit-adds-stablecoin-payments-for-faster-cross-border-transfers",
+      "source": "We Are Tech Africa",
+      "date": "2026-10-02"
+    },
+    {
+      "title": "Nigerian fintech Oneremit adds stablecoin payments for cross-border trade",
+      "url": "https://africabusinessinsight.com/nigerian-fintech-oneremit-adds-stablecoin-payments-for-cross-border-trade/",
+      "source": "Africa Business Insight",
+      "date": "2026-10-02"
     },
     {
       "title": "Oneremit expands cross-border payments operations, secures approvals",
@@ -57,6 +110,19 @@
       "date": "2026-10-01"
     },
     {
+      "title": "Oneremit deepens strategic partnerships to bridge African cross-border payment gaps",
+      "url": "https://blueprint.ng/oneremit-deepens-strategic-partnerships-to-bridge-african-cross-border-payment-gaps/",
+      "source": "Blueprint",
+      "date": "2026-10-01"
+    },
+    {
+      "title": "Oneremit Partners with Owlting to Expand Stablecoin-Enabled Cross-Border Settlement",
+      "url": "https://techpoint.africa/brandpress/oneremit-partners-with-owlting-to-expand-stablecoin-enabled-cross-border-settlement/",
+      "source": "Techpoint Africa",
+      "date": "2026-09-30",
+      "format": "Brand Press from Oneremit"
+    },
+    {
       "title": "Building the regulated backbone: why Oneremit is Making Compliance Its Competitive Advantage",
       "url": "https://businesspost.ng/technology/building-the-regulated-backbone-why-oneremit-is-making-compliance-its-competitive-advantage/",
       "source": "Business Post",
@@ -64,11 +130,17 @@
       "format": "Contributor article"
     },
     {
+      "title": "Transparent Pricing, Human Support Define our Cross-Border Play, says Oneremit",
+      "url": "https://www.thisdaylive.com/2026/09/23/transparent-pricing-human-support-define-our-cross-border-play-says-oneremit/",
+      "source": "THISDAY",
+      "date": "2026-09-23"
+    },
+    {
       "title": "Hammed Afenifere on the Local Context AI Compliance Can Miss",
       "url": "https://hackernoon.com/hammed-afenifere-on-the-local-context-ai-compliance-can-miss",
       "source": "HackerNoon",
       "date": "2026-09-21",
-      "format": "Business Blogging release"
+      "format": "Opinion / thought leadership · Business Blogging release"
     },
     {
       "title": "Oneremit Building Cross-Border Payments Around Trust, Compliance – Hammed Afenifere",
@@ -178,6 +250,28 @@
       "title": "Oneremit processed over $20M in H1 2025",
       "url": "https://cedirates.com/news/how-oneremit-processed-over-20-million-in-h1-2025-with-a-concierge-model/",
       "source": "CediRATES"
+    }
+  ],
+  "partners": [
+    {
+      "title": "Oneremit featured on OwlTing's website",
+      "url": "https://owlting.com/portal/?lang=en",
+      "source": "OwlTing Group",
+      "format": "Partner website · Oneremit customer testimonial"
+    },
+    {
+      "title": "Modernizing Africa’s Trade Corridors: How Oneremit and OwlPay are Solving the Monday-to-Wednesday Trap",
+      "url": "https://redchip.com/articles/2035/modernizing-africas-trade-corridors-how-oneremit-and-owlpay-are-solving-the-monday-to-wednesday-trap",
+      "source": "RedChip",
+      "date": "2026-10-09",
+      "format": "OwlPay partner interview feature"
+    },
+    {
+      "title": "The Monday-to-Wednesday Trap Has a Fix. It Runs on Stablecoin Rails",
+      "url": "https://www.linkedin.com/pulse/monday-to-wednesday-trap-has-fix-runs-stablecoin-rails-owlting-nfhyc",
+      "source": "OwlTing Group",
+      "date": "2026-07-14",
+      "format": "Partner commentary by Darren Wang"
     }
   ]
 }
